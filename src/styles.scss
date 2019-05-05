@@ -2,28 +2,9 @@
 
 @import '../src/styles/_colors';
 @import '../node_modules/bootstrap/scss/bootstrap';
-// @import '../node_modules/bootstrap/scss/functions';
-// @import '../node_modules/bootstrap/scss/variables';
-// @import '../node_modules/bootstrap/scss/bootstrap'; 
-// @import '../node_modules/bootstrap/scss/_mixins'; 
-// @import '../node_modules/bootstrap/scss/reboot'; 
-// @import '../node_modules/bootstrap/scss/type'; 
-
-// @import '../node_modules/bootstrap/scss/bootstrap-grid'; 
-// @import '../node_modules/bootstrap/scss/utilities/display'; 
-// @import '../node_modules/bootstrap/scss/utilities/float'; 
-// @import '../node_modules/bootstrap/scss/utilities/text'; 
-// @import '../node_modules/bootstrap/scss/utilities/align'; 
-// @import '../node_modules/bootstrap/scss/utilities/borders'; 
-// @import '../node_modules/bootstrap/scss/utilities/sizing'; 
-
-// @import '../node_modules/bootstrap/scss/nav'; 
-// @import '../node_modules/bootstrap/scss/navbar'; 
-// @import '../node_modules/bootstrap/scss/images'; 
 
 
-
-body {
+html body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -31,12 +12,12 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: $goldish; }
+  background-color: rgba(238,218,123,1.00)!important; }
 
-  .bg-primary {
-  background-color: $greenish-800 !important; }
+nav.bg-primary {
+  background-color: rgba(72, 113, 27,1.00)!important; }
 
-  header, footer{
+header, footer{
     padding: $main-inset;
   }
 
@@ -59,4 +40,12 @@ img.normal {
 
   img.none-i {
     color: $white;
+  }
+
+  svg.social-i {
+    color: $white;
+  }
+
+  div.social a img {
+    margin: 5px 0;
   }

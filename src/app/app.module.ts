@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
+import { SuccessComponent } from './success/success.component';
+import { DonateComponent } from './donate/donate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContactComponent,
+    HomeComponent,
+    SuccessComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,
