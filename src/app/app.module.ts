@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { SuccessComponent } from './success/success.component';
 import { DonateComponent } from './donate/donate.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DonateComponent } from './donate/donate.component';
     ContactComponent,
     HomeComponent,
     SuccessComponent,
+    SidebarComponent,
     DonateComponent
   ],
   imports: [
