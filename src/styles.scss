@@ -49,3 +49,27 @@ img.normal {
   div.social a img {
     margin: 5px 0;
   }
+
+  .main-container {
+    margin: 0 20px;
+  }
+
+  .bw-flex-container {
+    border: 0 solid green;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .bw-flex-container-column {
+    border: 0 solid green;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  .bw-flex-item {
+    width: 100%;
+  }
+  .bw-flex-item-2 {
+    background-color: lightgrey;
+    border: 1px dotted grey;
+    height: 96px;
+  }
