@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-donate',
   templateUrl: './donate.component.html',
   styleUrls: ['./donate.component.scss']
 })
-export class DonateComponent implements OnInit {
+export class DonateComponent  {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  donation = new FormControl('');
 
 }
