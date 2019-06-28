@@ -10,8 +10,9 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { SuccessComponent } from './success/success.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { PaymentService } from './payment/payment.service';
 import { DonateComponent } from './donate/donate.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,9 @@ import { DonateComponent } from './donate/donate.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
-  providers: [PaymentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

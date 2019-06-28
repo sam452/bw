@@ -1,65 +1,45 @@
-import { Component, AfterViewInit, Input, ViewChild } from '@angular/core';
-import { PaymentService } from '../payment/payment.service'
+import { Component, NgZone } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-donate',
   templateUrl: './donate.component.html',
   styleUrls: ['./donate.component.scss']
+  
 })
-export class DonateComponent implements AfterViewInit {
 
-  @Input() amount: number; // Total amount
-  @Input() label: string; // Label for product/purchase
+export class DonateComponent {
 
-  elements: any;
-  donate: any;
-  prButton: any;
+  cardNumber: string;
+  expiryMonth: string;
+  expiryYear: string;
+  cvc: string;
 
-  @ViewChild('payElement') payElement;
+  message: string;
+  
+  constructor(private _zone: NgZone) {}
 
-  constructor(private pmt: PaymentService) { }
-
-  ngAfterViewInit() {
-    this.paymentRequest = this.pmt.stripe.paymentRequest({
-      country: 'US',
-      currency: 'usd',
-      total: {
-        amount: this.amount,
-        label: this.label,
-    },
-  });
-
-  this.elements = this.pmt.stripe.elements();
-
-  this.paymentRequest.on('source', async (event) => {
-    console.log(event)
-    setTimeout(() => {
-      event.complete('success')
-    }, 1000)
-  });
-
-  this.prButton = this.elements.create('paymentRequestButton', {
-    paymentRequest: this.paymentRequest,
-    style: {
-      paymentRequestButton: {
-        type: 'donate',
-        theme: 'dark'
-      },
-    }
-  });
-
-  this.mountButton()
-
-  }
-
-  async mountButton() {
-    const result = await this.paymentRequest.canMakePayment();
-    if (result) {
-      this.prButton.mount(this.payElement.nativeElement);
-    } else {
-      console.error('old browser');
-      }
+  getToken() {
+    this.message = 'Loading...';
     
-  }
+    (<any>window).Stripe.card.createToken({
+      number: this.cardNumber,
+      exp_month: this.expiryMonth,
+      exp_year: this.expiryYear,
+      cvc: this.cvc
+    }, (status: number, response: any) => {
 
+      // Wrapping inside the Angular zone
+      this._zone.run(() => {
+        if (status === 200) {
+          this.message = `Success! Card token ${response.card.id}.`;
+        } else {
+          this.message = response.error.message;
+        }
+      });
+    });
+  }
 }
+
+
