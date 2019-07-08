@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     DonateComponent
   ],
+  providers: [],
   imports: [
     BrowserModule,
     FormsModule,
