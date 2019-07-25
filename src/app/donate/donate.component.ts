@@ -1,5 +1,6 @@
 import { Component, NgZone } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { BackendService } from '../service/backend.service';
 
 @Component({
   moduleId: module.id,
@@ -18,7 +19,10 @@ export class DonateComponent {
 
   message: string;
   
-  constructor(private _zone: NgZone) {}
+  constructor(private _zone: NgZone, private bs: BackendService) {
+
+
+  }
 
   getToken() {
     this.message = 'Loading...';
@@ -34,6 +38,23 @@ export class DonateComponent {
       this._zone.run(() => {
         if (status === 200) {
           this.message = `Success! Card token ${response.card.id}.`;
+
+          this.bs.login({
+            email: 'boban@bentwhiskerranch.org',
+            password: 'mypassword'
+          }).then(user => {
+            this.bs.transaction({
+              access_token: 'gBXKN4FroNRqDtxCA2Opmw',
+              stripeToken: 'mystripe',
+              name: 'sam',
+              address1: '404 st',
+              zip: '30044',
+              reason: 'my reason',
+              amount: '11',
+              transaction_date: '2019-05-06',
+              transaction_code: 'D'
+            }, user).then((res) => console.log('success'));
+          });
         } else {
           this.message = response.error.message;
         }

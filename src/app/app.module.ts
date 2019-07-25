@@ -13,6 +13,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DonateComponent } from './donate/donate.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BackendService } from './service/backend.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +32,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
