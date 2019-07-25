@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { SuccessComponent } from './success/success.component';
 import { DonateComponent } from './donate/donate.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     HomeComponent,
     SuccessComponent,
     SidebarComponent,
-    DonateComponent
+    DonateComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

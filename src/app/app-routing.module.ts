@@ -6,6 +6,7 @@ import { SuccessComponent } from './success/success.component';
 import { DonateComponent } from './donate/donate.component';
 import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'donate', component: DonateComponent},
   {path: 'header', component: HeaderComponent},
   {path: 'footer', component: FooterComponent},
+  {path: 'privacy', component: PrivacyComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home'}
 ];
 
