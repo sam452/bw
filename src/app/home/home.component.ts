@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.bs.login({
-      email: 'boban@bentwhiskerranch.org',
-      password: 'mypassword'
+      email: 'sam@bentwhiskerranch.org',
+      password: 'frist19'
     }).then(res => console.log(res));
 
   }

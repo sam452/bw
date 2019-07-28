@@ -14,7 +14,7 @@ export class User {
 
 
     constructor(data: any = {}, header: HttpHeaders) {
-      if (!data) {data = {}};
+      if (!data) { data = {}; }
       this.id = data.id;
       this.email = data.email;
       this.uid = data.uid;

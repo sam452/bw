@@ -33,15 +33,16 @@ export const Api = {
 
   public transaction( data: any,  user: User): Promise<any> {
 
-    const header = new HttpHeaders();
-    header.append('access-token', user.accessToken);
-    header.append('expiry', user.expiry);
-    header.append('token-type', user.tokenType);
-    header.append('uid', user.uid);
-    header.append('client', user.client);
-
+    const headers = new HttpHeaders({
+        'access-token': user.accessToken,
+        'Content-Type': 'application/json',
+        expiry: user.expiry,
+        'token-type': user.tokenType,
+        uid: user.uid,
+        client: user.client
+    });
     return new Promise((resolve, reject) => {
-        this.http.post(Api.transactions, data).subscribe((res) => {
+        this.http.post(Api.transactions, data, {headers} ).subscribe((res) => {
             console.log('transaction add success', res);
             resolve(res);
         });
