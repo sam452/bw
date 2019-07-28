@@ -8,6 +8,34 @@
 
   <div class="form-row">
     <label>
+      <span>Name on credit card</span>
+      <input [(ngModel)]="name" name="name" type="text" size="20">
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>Address (card statements sent)</span>
+      <input [(ngModel)]="address1" name="address1" type="text" size="20">
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>Donation amount</span>
+      <input [(ngModel)]="amount" name="amount" type="text" size="20">
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>Name on credit card</span>
+      <input [(ngModel)]="zip" name="zip" type="text" size="20">
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
       <span>Card Number</span>
       <input [(ngModel)]="cardNumber" name="card-number" type="text" size="20" data-stripe="number">
     </label>
@@ -26,7 +54,7 @@
     <label>
       <span>CVC</span>
       <input [(ngModel)]="cvc" name="cvc" type="text" size="4" data-stripe="cvc">
-    </label>
+    </label>d
   </div>
 
   <input type="submit" value="Submit Payment">

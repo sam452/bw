@@ -1,13 +1,13 @@
 import { Component, NgZone } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { BackendService } from '../service/backend.service';
+import {formatDate} from '@angular/common';
 
 @Component({
   moduleId: module.id,
   selector: 'app-donate',
   templateUrl: './donate.component.html',
   styleUrls: ['./donate.component.scss']
-  
 })
 
 export class DonateComponent {
@@ -18,6 +18,8 @@ export class DonateComponent {
   cvc: string;
 
   message: string;
+
+  myDate = new Date();
   
   constructor(private _zone: NgZone, private bs: BackendService) {
 
@@ -36,7 +38,10 @@ export class DonateComponent {
 
       // Wrapping inside the Angular zone
       this._zone.run(() => {
+
         if (status === 200) {
+          var today = new Date();
+
           this.message = `Success! Card token ${response.card.id}.`;
 
           this.bs.login({
@@ -51,7 +56,7 @@ export class DonateComponent {
               zip: '30044',
               reason: 'my reason',
               amount: '11',
-              transaction_date: '2019-05-06',
+              transaction_date: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
               transaction_code: 'D'
             }, user).then((res) => console.log('success'));
           });
