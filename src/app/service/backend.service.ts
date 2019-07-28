@@ -8,6 +8,12 @@ export const Api = {
     transactions : 'https://work.bentwhiskerranch.org/api/v1/transactions'
 };
 
+// export const Api = {
+//     login : 'http://localhost:3000/api/v1/auth/sign_in',
+//     transactions : 'http://localhost:3000/api/v1/transactions'
+// };
+
+
 @Injectable() export class BackendService {
 
   constructor(private http: HttpClient) {
@@ -16,10 +22,10 @@ export const Api = {
 
   public login( data: {email: string, password: string}): Promise<any> {
     return new Promise((resolve, reject) => {
-        this.http.post(Api.login, data).subscribe((res) => {
-            console.log('login success', res);
-            const user = new User(res);
-            // TODO set all user data and access toen, expire time uid, client etc
+        this.http.post<any>(Api.login, data, {observe: 'response'}).subscribe((res) => {
+            const userData = res.body.data;
+            const headers = res.headers;
+            const user = new User(userData, headers);
             resolve(user);
         });
     });
@@ -29,7 +35,7 @@ export const Api = {
 
     const header = new HttpHeaders();
     header.append('access-token', user.accessToken);
-    header.append('expiry', String(user.expiry));
+    header.append('expiry', user.expiry);
     header.append('token-type', user.tokenType);
     header.append('uid', user.uid);
     header.append('client', user.client);

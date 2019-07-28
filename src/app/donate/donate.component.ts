@@ -45,8 +45,8 @@ export class DonateComponent {
           this.message = `Success! Card token ${response.card.id}.`;
 
           this.bs.login({
-            email: 'boban@bentwhiskerranch.org',
-            password: 'mypassword'
+            email: 'sam@bentwhiskerranch.org',
+            password: 'frist19'
           }).then(user => {
             this.bs.transaction({
               access_token: 'gBXKN4FroNRqDtxCA2Opmw',
