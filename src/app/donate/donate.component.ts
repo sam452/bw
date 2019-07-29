@@ -50,13 +50,13 @@ export class DonateComponent {
           }).then(user => {
             this.bs.transaction({
               access_token: 'gBXKN4FroNRqDtxCA2Opmw',
-              stripeToken: 'mystripe',
-              name: 'sam',
+              stripeToken: response.card.id,
+              name: 'sam 1',
               address1: '404 st',
               zip: '30044',
               reason: 'my reason',
               amount: '11',
-              transaction_date: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
+              transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
               transaction_code: 'D'
             }, user).then((res) => console.log('success'));
           });
