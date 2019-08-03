@@ -23,6 +23,8 @@ export class DonateComponent {
   reason: string;
   amount: string;
   transaction_date: string;
+  stripeToken: string;
+  email: string;
 
 
   message: string;
@@ -51,21 +53,22 @@ export class DonateComponent {
           var today = new Date();
 
           this.message = `Success! Card token ${response.card.id}.`;
-
+          
           this.bs.login({
             email: 'sam@bentwhiskerranch.org',
             password: 'frist19'
           }).then(user => {
             this.bs.transaction({
               access_token: user.accessToken,
-              stripeToken: response.card.id,
+              stripeToken: response.id,
               name: this.name,
+              email: this.email,
               address1: this.address1,
               zip: this.zip,
               reason: 'my reason2',
               amount: this.amount,
               transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
-              transaction_code: 'X'
+              transaction_code: 'D'
             }, user).then((res) => console.log('success'));
           });
         } else {

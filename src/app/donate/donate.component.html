@@ -1,62 +1,82 @@
-<div class="d-flex flex-row main-container">
-  <div class="flex-sm-column mr-auto">
-    <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but also other items for the care of those we care. For gifts in kind contact us for information.</p>
-    <p>Coming soon, a place where you can give securely with your credit card.</p>
-  </div>
-  <form action="" method="POST" id="payment-form" (submit)="getToken()">
-  <span class="payment-message">{{message}}</span>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm">
+      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but also other items for the care of those we care. For gifts in kind contact us for information.</p>
+      <p>Donations made here are secure and encrypted.</p>
+      <p>You will receive an acknoledgement to the email address you provide.</p>
+    </div>
+    <div class="col-sm">
+      <div class="container-fluid">
+      <form action="" method="POST" id="payment-form" (submit)="getToken()">
+      <span class="payment-message">{{m}}</span>
 
-  <div class="form-row">
-    <label>
-      <span>Name on credit card</span>
-      <input [(ngModel)]="name" name="name" type="text" size="20">
-    </label>
-  </div>
+      <div class="form-group">
+        <label for="name">Name on credit card</label>
+          <input [(ngModel)]="name" name="name" type="text" id="name" class="form-control form-control-sm">
+      </div>
 
-  <div class="form-row">
-    <label>
-      <span>Address (card statements sent)</span>
-      <input [(ngModel)]="address1" name="address1" type="text" size="20">
-    </label>
-  </div>
+      <div class="form-group">
+        <label for="address1">Address (card statements sent)</label>
+          <input [(ngModel)]="address1" name="address1" type="text" class="form-control form-control-sm" id="address1">
+      </div>
 
-  <div class="form-row">
-    <label>
-      <span>Donation amount</span>
-      <input [(ngModel)]="amount" name="amount" type="text" size="20">
-    </label>
-  </div>
+      <div class="form-group">
+        <label for="zip">Zip code</label>
+          <input [(ngModel)]="zip" name="zip" type="text" class="form-control form-control-sm" id="zip">
+      </div>
 
-  <div class="form-row">
-    <label>
-      <span>Name on credit card</span>
-      <input [(ngModel)]="zip" name="zip" type="text" size="20">
-    </label>
-  </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+          <input [(ngModel)]="email" name="email" type="text" class="form-control form-control-sm" id="email">
+      </div>
 
-  <div class="form-row">
-    <label>
-      <span>Card Number</span>
-      <input [(ngModel)]="cardNumber" name="card-number" type="text" size="20" data-stripe="number">
-    </label>
-  </div>
+      <div class="form-group">
+        <label for="amount">Donation amount</label>
+          <input [(ngModel)]="amount" name="amount" type="text" class="form-control form-control-sm" id="amount">
+      </div>
 
-  <div class="form-row">
-    <label>
-      <span>Expiration (MM/YY)</span>
-      <input [(ngModel)]="expiryMonth" name="expiry-month" type="text" size="2" data-stripe="exp_month">
-    </label>
-    <span> / </span>
-    <input [(ngModel)]="expiryYear" name="expiry-year" type="text" size="2" data-stripe="exp_year">
-  </div>
+      <div class="form-group">
+        <label for="card-number">Card Number</label>
+          <input [(ngModel)]="cardNumber" name="card-number" type="text" class="form-control form-control-sm" id="card-number" data-stripe="number">
+      </div>
 
-  <div class="form-row">
-    <label>
-      <span>CVC</span>
-      <input [(ngModel)]="cvc" name="cvc" type="text" size="4" data-stripe="cvc">
-    </label>d
-  </div>
+      <div class="form-group">
+        <div class="row no-gutters">
+          <label for="expiry" class="col-8">Expiration (MM/YY)</label>
+          
+          <label for="cvc" class="col-3">CVC</label>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            
+              <input [(ngModel)]="expiryMonth" name="expiry-month" type="text" class="form-control form-control-sm" id="expiry" data-stripe="exp_month">
+          </div>     
+          <div class="col-1">
+                <span> / </span>
+          </div>
+         
+          <div class="col-3">
+            <input [(ngModel)]="expiryYear" name="expiry-year" type="text"  data-stripe="exp_year" class="form-control form-control-sm">
+          </div>
+          
+        
+          <div class="col-3  ">
+            
+              <input [(ngModel)]="cvc" name="cvc" type="text"  id="cvc" class="form-control form-control-sm" data-stripe="cvc">
+          </div>
+        </div>
+      </div>
+      
 
-  <input type="submit" value="Submit Payment">
-</form>
+      
+        <div class="form-group">
+          <input type="submit" value="Submit Donation">
+        </div>
+      </form>
+
+
+
+    </div>
+    </div>
+  </div>
 </div>
