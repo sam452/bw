@@ -9,9 +9,13 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { SuccessComponent } from './success/success.component';
-import { DonateComponent } from './donate/donate.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { DonateComponent } from './donate/donate.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BackendService } from './service/backend.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,9 +32,11 @@ import { PrivacyComponent } from './privacy/privacy.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

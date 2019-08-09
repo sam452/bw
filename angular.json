@@ -33,6 +33,7 @@
             ],
             "scripts": [
             "node_modules/jquery/dist/jquery.min.js",
+            "node_modules/jquery/dist/jquery.min.js",
             "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
             "es5BrowserSupport": true
@@ -42,7 +43,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.prod.hidden.ts"
                 }
               ],
               "optimization": true,
