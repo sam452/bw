@@ -13,7 +13,7 @@ import {formatDate} from '@angular/common';
 
 export class DonateComponent {
 
-  @ViewChild('#payment-form') formValues;
+  @ViewChild('f') formValues;
   cardNumber: string;
   expiryMonth: string;
   expiryYear: string;
@@ -72,8 +72,20 @@ export class DonateComponent {
               transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
               transaction_code: 'D'
             }, user).then((res) => console.log('success'));
-            this.message = 'Success! Your donation of \$ ${this.amount} dollars was successful.';
-            this.formValues.resetForm();
+            this.name = '';
+            this.email = '';
+            this.address1 = '';
+            this.zip = '';
+            this.reason = ''; 
+            this.amount = ''; 
+            this.expiryMonth = '';
+            this.expiryYear = '';
+            this.cvc = '';
+            this.transaction_date = ''; 
+            this.transaction_code = '';
+            this.cardNumber = '';
+            this.message = `Success! Your donation of \$ ${this.amount} was successful.`;
+            
           });
         } else {
           this.message = response.error.message;
