@@ -72,7 +72,7 @@ export class DonateComponent {
               transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
               transaction_code: 'D'
             }, user).then((res) => console.log('success'));
-            this.name = '';
+            this.message = `Success! Your donation of \$${this.amount} was successful.`;this.name = '';
             this.email = '';
             this.address1 = '';
             this.zip = '';
@@ -84,7 +84,6 @@ export class DonateComponent {
             this.transaction_date = ''; 
             this.transaction_code = '';
             this.cardNumber = '';
-            this.message = `Success! Your donation of \$ ${this.amount} was successful.`;
             
           });
         } else {
