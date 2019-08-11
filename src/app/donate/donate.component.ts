@@ -27,9 +27,12 @@ export class DonateComponent {
   transaction_date: string;
   stripeToken: string;
   email: string;
-
+  city: string;
+  state: string;
+  reason: string;
 
   message: string;
+  results: string;
 
   myDate = new Date();
   
@@ -66,15 +69,22 @@ export class DonateComponent {
               name: this.name,
               email: this.email,
               address1: this.address1,
+              city: this.city,
+              state: this.state,
               zip: this.zip,
-              reason: 'my reason2',
+              reason: this.reason,
               amount: this.amount,
               transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
               transaction_code: 'D'
             }, user).then((res) => console.log('success'));
-            this.message = `Success! Your donation of \$${this.amount} was successful.`;this.name = '';
+            this.message = ``;
+            this.results = `Success! Your donation of \$${this.amount} was successful.`;
+            console.log(user)
+            this.name = '';
             this.email = '';
             this.address1 = '';
+            this.city = '';
+            this.state = '';
             this.zip = '';
             this.reason = ''; 
             this.amount = ''; 

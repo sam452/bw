@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm">
-      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but also other items for the care of those we care. For gifts in kind contact us for information.</p>
+      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but are many other costs associated with animal care. For gifts in kind contact us for information.</p>
       <p>Donations made here are secure and encrypted.</p>
       <p>You will receive an acknowledgement to the email address you provide.</p>
     </div>
@@ -21,6 +21,24 @@
       </div>
 
       <div class="form-group">
+        <div class="row no-gutters">
+          
+          <div class="col-6">
+            <label for="city">City</label>
+            <input [(ngModel)]="city" name="city" type="text" class="form-control form-control-sm" id="city">
+          </div>
+        
+          <div class="col-2">
+            <label for="state">state</label>
+            <input [(ngModel)]="state" name="state" type="text" class="form-control form-control-sm" id="state">
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
         <label for="zip">Zip code</label>
           <input [(ngModel)]="zip" name="zip" type="text" class="form-control form-control-sm" id="zip">
       </div>
@@ -33,6 +51,11 @@
       <div class="form-group">
         <label for="amount">Donation amount</label>
           <input [(ngModel)]="amount" name="amount" type="text" class="form-control form-control-sm" id="amount">
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Additional note</label>
+          <input [(ngModel)]="reason" name="reason" type="text" class="form-control form-control-sm" id="reason">
       </div>
 
       <div class="form-group">
@@ -67,7 +90,7 @@
         </div>
       </div>
       
-
+        <span class="results-message">{{results}}</span>
       
         <div class="form-group">
           <input type="submit" value="Submit Donation">
