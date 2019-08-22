@@ -61,7 +61,7 @@ export class DonateComponent {
           
           this.bs.login({
             email: 'sam@bentwhiskerranch.org',
-            password: 'frist19'
+            password: 'frist18'
           }).then(user => {
             this.bs.transaction({
               access_token: user.accessToken,
