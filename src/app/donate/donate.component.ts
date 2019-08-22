@@ -29,7 +29,6 @@ export class DonateComponent {
   email: string;
   city: string;
   state: string;
-  reason: string;
 
   message: string;
   results: string;
