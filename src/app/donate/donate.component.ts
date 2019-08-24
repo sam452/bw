@@ -74,7 +74,12 @@ export class DonateComponent {
               reason: this.reason,
               amount: this.amount,
               transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
-              transaction_code: 'D'
+              transaction_code: 'D',
+              address2: '',
+              transaction_type: '',
+              recurring: 0,
+              donor_tag: '',
+              acknowledged: 1
             }, user).then((res) => console.log('success'));
             this.message = ``;
             this.results = `Success! Your donation of \$${this.amount} was successful.`;
