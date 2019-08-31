@@ -23,7 +23,7 @@ export class DonateComponent {
   zip: string;
   transaction_code: string;
   reason: string;
-  amount: string;
+  amount: any;
   transaction_date: string;
   stripeToken: string;
   email: string;
@@ -55,12 +55,14 @@ export class DonateComponent {
 
         if (status === 200) {
           var today = new Date();
-
-          
+         var i_amount = +this.amount * 100;   
+         var i_amounts = String(i_amount);
+         var i_amountf = parseFloat(i_amounts).toFixed(2); 
+         i_amount = +i_amountf;
           
           this.bs.login({
             email: 'sam@bentwhiskerranch.org',
-            password: 'frist18'
+            password: 'frist19'
           }).then(user => {
             this.bs.transaction({
               access_token: user.accessToken,
@@ -72,7 +74,7 @@ export class DonateComponent {
               state: this.state,
               zip: this.zip,
               reason: this.reason,
-              amount: this.amount,
+              amount: i_amount,
               transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
               transaction_code: 'D',
               address2: '',
@@ -83,7 +85,6 @@ export class DonateComponent {
             }, user).then((res) => console.log('success'));
             this.message = ``;
             this.results = `Success! Your donation of \$${this.amount} was successful.`;
-            console.log(user)
             this.name = '';
             this.email = '';
             this.address1 = '';
@@ -91,7 +92,7 @@ export class DonateComponent {
             this.state = '';
             this.zip = '';
             this.reason = ''; 
-            this.amount = ''; 
+            this.amount = null; 
             this.expiryMonth = '';
             this.expiryYear = '';
             this.cvc = '';
