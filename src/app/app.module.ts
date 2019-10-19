@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BackendService } from './service/backend.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AmzwishComponent } from './amzwish/amzwish.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     SuccessComponent,
     SidebarComponent,
     DonateComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    AmzwishComponent
   ],
   imports: [
     BrowserModule,
