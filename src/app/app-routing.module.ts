@@ -7,12 +7,15 @@ import { DonateComponent } from './donate/donate.component';
 import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { AmzwishComponent } from './amzwish/amzwish.component';
+import { AdoptComponent } from './adopt/adopt.component';
 import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'navbar', component: NavbarComponent},
   {path: 'successes', component: SuccessComponent},
+  {path: 'adopt', component: AdoptComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'donate', component: DonateComponent},
   {path: 'header', component: HeaderComponent},
