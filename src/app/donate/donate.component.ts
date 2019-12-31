@@ -60,29 +60,29 @@ export class DonateComponent {
          var i_amountf = parseFloat(i_amounts).toFixed(2); 
          i_amount = +i_amountf;
           
-          this.bs.login({
-            email: 'sam@bentwhiskerranch.org',
-            password: 'frist18'
-          }).then(user => {
+
             this.bs.transaction({
-              access_token: user.accessToken,
-              stripeToken: response.id,
-              name: this.name,
-              email: this.email,
-              address1: this.address1,
-              city: this.city,
-              state: this.state,
-              zip: this.zip,
-              reason: this.reason,
-              amount: i_amount,
-              transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
-              transaction_code: 'D',
-              address2: '',
-              transaction_type: '',
-              recurring: 0,
-              donor_tag: '',
-              acknowledged: 1
-            }, user).then((res) => console.log('success'));
+              data: {
+              type: 'node--transaction',
+              attributes: {
+              field_stripe_token: response.id,
+              title: this.name,
+              field_email: this.email,
+              field_address: [this.address1],
+              field_city: this.city,
+              field_state: this.state,
+              field_zip: this.zip,
+              field_reason: this.reason,
+              field_amount: i_amount,
+              field_transaction_date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
+              field_transaction_code: 'D',
+
+              field_transaction_type: '',
+              field_recurring: 0,
+              field_donor_tag: '',
+              field_acknowledged: 1,
+              status: 1
+            }}}).then((res) => console.log('success'));
             this.message = ``;
             this.results = `Success! Your donation of \$${this.amount} was successful.`;
             this.name = '';
@@ -100,11 +100,13 @@ export class DonateComponent {
             this.transaction_code = '';
             this.cardNumber = '';
             
-          });
+         
+
         } else {
           this.message = response.error.message;
         }
       });
+
     });
   }
 }

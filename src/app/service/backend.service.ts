@@ -4,8 +4,8 @@ import { User } from '../model/user';
 
 
 export const Api = {
-    login : 'https://works.bentwhiskerranch.org/api/v1/auth/sign_in',
-    transactions : 'https://works.bentwhiskerranch.org/api/v1/transactions'
+    login : 'https://work.bentwhiskerranch.org/api/v1/auth/sign_in',
+    transactions : 'https://work.bentwhiskerranch.org/jsonapi/node/transaction'
 };
 
 // export const Api = {
@@ -31,15 +31,13 @@ export const Api = {
     });
   }
 
-  public transaction( data: any,  user: User): Promise<any> {
+  public transaction( data: any): Promise<any> {
 
     const headers = new HttpHeaders({
-        'access-token': user.accessToken,
-        'Content-Type': 'application/json',
-        expiry: user.expiry,
-        'token-type': user.tokenType,
-        uid: user.uid,
-        client: user.client
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
+        'Authorization': "Basic " + btoa("api:XwQL6GaFQbtZrjRR55S")
+
     });
     return new Promise((resolve, reject) => {
         this.http.post(Api.transactions, data, {headers} ).subscribe((res) => {
