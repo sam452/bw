@@ -40,7 +40,7 @@ import { AdoptComponent } from './adopt/adopt.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [BackendService],
+  providers  : [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
