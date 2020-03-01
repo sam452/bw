@@ -18,6 +18,8 @@ import { BackendService } from './service/backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AmzwishComponent } from './amzwish/amzwish.component';
 import { AdoptComponent } from './adopt/adopt.component';
+import { ArticleComponent } from './articles/articles.component';
+import { NoSanitizePipe } from './no-sanitize.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AdoptComponent } from './adopt/adopt.component';
     DonateComponent,
     PrivacyComponent,
     AmzwishComponent,
-    AdoptComponent
+    AdoptComponent,
+    ArticleComponent,
+    NoSanitizePipe
   ],
   imports: [
     BrowserModule,
