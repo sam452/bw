@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container-fluid">
+  <div class="row">
   <div *ngIf="id; then Article else Articles" class="article"></div>
   <ng-template #Articles>
     <section style="min-height:50em" class="col-md-8">
@@ -27,8 +28,11 @@
     <section style="min-height:50em" class="col-md-8 mt-2">
     <div class="article--full">
       <article *ngFor="let article of articles">
-
-
+        
+        <div class="article-full--image row pt-5 pb-3">
+          <img src="{{ article.image_reference  }}" style="width:100%; height: 60%" class="rounded img-fluid">
+        </div>
+ <!-- article.images[0] -->
         <div class="article-full--title row pb-3">
           <h4><a href="/article/{{ article.id }}">{{ article.title }}</a></h4>
         </div>
@@ -47,4 +51,5 @@
     <aside class="col-md-4">
     </aside>
   </ng-template>
+</div>
 </div>

@@ -7,4 +7,7 @@ export class Article {
   alias: string;
   created: string;
   changed: string;
+  image_reference: string;
+  images: Array<string>;
+  image_data: object;
 }

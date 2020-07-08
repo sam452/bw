@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Article } from './article';
 import { ArticleService } from '../service/article.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RelationshipService } from '../service/relationship.service';
+import { Relationship } from '../service/relationship';
 
 @Component({
   selector: 'app-articles',
@@ -10,20 +12,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ArticleComponent implements OnInit, OnDestroy {
   articles: Article[];
+  relationship: Relationship;
   public id: string = null;
   private sub: any;
   private API_URL = 'https://works.bentwhiskerranch.org/jsonapi/node/article/';
 
   constructor(private articleService: ArticleService,
+              private relationshipService: RelationshipService,
               private route: ActivatedRoute,
               private router: Router) { }
 
+
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-    if (params['id']) {
-      this.id = params['id'];
-    }
-    this.getArticles(this.id);
+      if (params['id']) {
+        this.id = params['id'];
+      }
+      this.getArticles(this.id);
     });
   }
 
@@ -45,6 +50,8 @@ export class ArticleComponent implements OnInit, OnDestroy {
       article.alias = <string>articles.data.attributes.path.alias;
       article.created = <string>articles.data.attributes.created;
       article.changed = <string>articles.data.changed;
+      this.getImageRef(articles.data.relationships.field_image.links.related.href, article);
+      console.log(this.getImageRef(articles.data.relationships.field_image.links.related.href, article));
       data.push(article);
     } 
     else {
@@ -57,11 +64,22 @@ export class ArticleComponent implements OnInit, OnDestroy {
         article.alias = <string>articles.data[i].attributes.path.alias;
         article.created = <string>articles.data[i].attributes.created;
         article.changed = <string>articles.data[i].attributes.changed;
+
+        article.images = ['na'];
         data.push(article);
       }
     }
     return data;
   }
+ 
+  getImageRef(field_image: string, article: Article): void {
+    this.relationshipService.getImageUrl(field_image).subscribe(relationship => {
+      article.image_reference = this.API_URL + relationship.data.attributes.uri.url;
+console.log(relationship);
+    });
+  }
+
+
 
   ngOnDestroy() {
     this.sub.unsubscribe();
