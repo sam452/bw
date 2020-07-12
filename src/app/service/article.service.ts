@@ -13,19 +13,44 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ArticleService {
-  private articlesUrl = 'https://works.bentwhiskerranch.org';
+  private articlesUrl = 'https://works.bentwhiskerranch.org/jsonapi/node/article';
 
   constructor(private http: HttpClient) {}
 
   getArticles(id: string): Observable<Article[]>
   {
-    console.log(id);
     if (id) {
-      return this.http.get<Article[]>(this.articlesUrl + '/jsonapi/node/article/' + id);
+      return this.http.get<Article>(this.articlesUrl + '/' + id + '?include=field_image', httpOptions)
+        .pipe(
+          map(res => res['data'])
+         )
+      .pipe(
+      catchError(this.handleError([]))
+    );
+    } 
+    else 
+    {
+      return this.http.get<Article[]>(this.articlesUrl, httpOptions)
+      .pipe(
+        map(res => res['data'])
+      )
+      .pipe(
+        catchError(this.handleError([]))
+      );
     }
-    else {
-      return this.http.get<Article[]>(this.articlesUrl + '/jsonapi/node/article?sort=-created');
+
+  }
+
+  private handleError<T> (result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
     }
   }
+
+  private getImages(relations: object): Observable<Article[]>
+    {
+      return null;
+    }
 
 }

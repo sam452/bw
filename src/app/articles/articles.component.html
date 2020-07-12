@@ -2,13 +2,13 @@
   <div class="row">
   <div *ngIf="id; then Article else Articles" class="article"></div>
   <ng-template #Articles>
-    <section style="min-height:50em" class="col-md-8">
+    <section style="min-height:50em" class="col-md-8 multi">
       <div class="article--timeline">
         <article *ngFor="let article of articles">
 
 
           <div class="article-thumbnail--title row">
-            <h4><a routerLink="/article/{{ article.id }}">{{ article.title }}</a></h4>
+            <h4><a routerLink="/article/{{ article.id }}">{{ article.attributes.title }}</a></h4>
             <p>{{ article.summary }}</p>
           </div>
           <div class="article-thumbnail--created row">
@@ -25,25 +25,25 @@
   </ng-template>
 
   <ng-template #Article>
-    <section style="min-height:50em" class="col-md-8 mt-2">
+    <section style="min-height:50em" class="col-md-8 mt-2 sing">
     <div class="article--full">
       <article *ngFor="let article of articles">
         
         <div class="article-full--image row pt-5 pb-3">
-          <img src="{{ article.image_reference  }}" style="width:100%; height: 60%" class="rounded img-fluid">
+          <img src="{{ article.included[0].attributes.uri.url }}" style="width:100%; height: 60%" class="rounded img-fluid">
         </div>
  <!-- article.images[0] -->
         <div class="article-full--title row pb-3">
-          <h4><a href="/article/{{ article.id }}">{{ article.title }}</a></h4>
+          <h4><a href="/article/{{ article.id }}">{{ article.attributes.title }}</a></h4>
         </div>
         <div class="article-full--created row pb-3">
           <div>
-            <span><i class="fa fa-calendar"></i> {{ article.created }} </span>
+            <span><i class="fa fa-calendar"></i> {{ article.attributes.created }} </span>
             <br>
           </div>
         </div>
         <div class="article-full--body row py-3">
-          <div [innerHTML]="article.body" style="width: 100%;"></div>
+          <div [innerHTML]="article.attributes.body.processed" style="width: 100%;"></div>
         </div>
       </article>
     </div>

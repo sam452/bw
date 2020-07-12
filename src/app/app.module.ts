@@ -18,7 +18,7 @@ import { BackendService } from './service/backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AmzwishComponent } from './amzwish/amzwish.component';
 import { AdoptComponent } from './adopt/adopt.component';
-import { ArticleComponent } from './articles/articles.component';
+import { ArticlesComponent } from './articles/articles.component';
 import { NoSanitizePipe } from './no-sanitize.pipe';
 
 @NgModule({
@@ -35,7 +35,7 @@ import { NoSanitizePipe } from './no-sanitize.pipe';
     PrivacyComponent,
     AmzwishComponent,
     AdoptComponent,
-    ArticleComponent,
+    ArticlesComponent,
     NoSanitizePipe
   ],
   imports: [
