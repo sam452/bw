@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AmzwishComponent } from './amzwish/amzwish.component';
 import { AdoptComponent } from './adopt/adopt.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { ArticleDetailComponent } from './articles/article-detail.component';
 import { NoSanitizePipe } from './no-sanitize.pipe';
 
 @NgModule({
@@ -36,6 +37,7 @@ import { NoSanitizePipe } from './no-sanitize.pipe';
     AmzwishComponent,
     AdoptComponent,
     ArticlesComponent,
+    ArticleDetailComponent,
     NoSanitizePipe
   ],
   imports: [

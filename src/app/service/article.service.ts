@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Article } from '../articles/article';
 
-
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 }
@@ -17,19 +16,10 @@ export class ArticleService {
 
   constructor(private http: HttpClient) {}
 
-  getArticles(id: string): Observable<Article[]>
-  {
-    if (id) {
-      return this.http.get<Article>(this.articlesUrl + '/' + id + '?include=field_image', httpOptions)
-        .pipe(
-          map(res => res['data'])
-         )
-      .pipe(
-      catchError(this.handleError([]))
-    );
-    } 
-    else 
+  getArticles(): Observable<Article[]>
     {
+
+
       return this.http.get<Article[]>(this.articlesUrl, httpOptions)
       .pipe(
         map(res => res['data'])
@@ -37,8 +27,21 @@ export class ArticleService {
       .pipe(
         catchError(this.handleError([]))
       );
-    }
+    
 
+  }
+
+  getArticle(id: string): Observable<Article>
+  {
+    if (id) {
+      return this.http.get<Article>(this.articlesUrl + '/' + id + '?include=field_image', httpOptions)
+        .pipe(
+          map(res => res['data', 'included'])
+         )
+        .pipe(
+          catchError(this.handleError([]))
+    );
+    } 
   }
 
   private handleError<T> (result?: T) {
