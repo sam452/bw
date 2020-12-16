@@ -65,13 +65,6 @@ export class ArticleDetailComponent implements OnInit {
     } 
   }
 
-  getToDos() {
-  	this.articleService.getTodos().subscribe(
-  		(response) => {
-  			console.log(response.body);
-  		})
-  }
-
   ngOnInit() : void {
     this.sub = this.route.params.subscribe(params => {
       if (params['id']) {

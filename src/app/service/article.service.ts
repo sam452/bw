@@ -18,32 +18,19 @@ export class ArticleService {
 
   constructor(private http: HttpClient) {}
 
-  getArticles(): Observable<Article[]>
+  getArticles(param: string): Observable<Article[]>
     {
 
-
-      return this.http.get<Article[]>(this.articlesUrl, httpOptions)
-      .pipe(
-        map(res => res['data'])
-      )
-      .pipe(
-        catchError(this.handleError([]))
-      );
+      
+      return this.http.get<Article[]>(this.articlesUrl + param, httpOptions)
+      
   }
 
-  getTodos() {
-    return this.http.get(this.articlesUrl + '/78074bc0-c34f-4e8c-b306-0b18b20b8215?include=field_image', { observe: 'response'});
-  }
-
-  getArticle(id: string)
+  getArticle(id: string): Observable<Article>
   {
     if (id) {
       return this.http.get<Article>(this.articlesUrl + '/' + id + '?include=field_image', httpOptions)
-        
-        .pipe(
-          catchError(this.handleError([]))
-    );
-    } 
+     } 
   }
 
   // getArticle(id: string): Observable<Article>

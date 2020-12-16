@@ -68,33 +68,34 @@
 
       <div class="form-group">
         <div class="row no-gutters">
-          <label for="expiry" class="col-8">Expiration (MM/YY)</label>
+          <label for="expiry" class="col-3">Expiration (MM/YY)</label>
           
-          <label for="cvc" class="col-3">CVC</label>
+          <label for="cvc" class="col-1">CVC</label>
         </div>
         <div class="row">
-          <div class="col-3">
+          <div class="col-1">
             
               <input [(ngModel)]="expiryMonth" name="expiry-month" type="text" class="form-control form-control-sm" id="expiry" data-stripe="exp_month">
           </div>     
-          <div class="col-1">
+          <div style="width: 10px;">
                 <span> / </span>
           </div>
          
-          <div class="col-3">
+          <div class="col-1">
             <input [(ngModel)]="expiryYear" name="expiry-year" type="text"  data-stripe="exp_year" class="form-control form-control-sm">
           </div>
           
         
-          <div class="col-3  ">
+          <div class="col-2">
             
               <input [(ngModel)]="cvc" name="cvc" type="text"  id="cvc" class="form-control form-control-sm" data-stripe="cvc">
           </div>
         </div>
       </div>
-      
-        <span class="results-message">{{results}}</span>
-      
+        
+        <div *ngIf="results" class="message-success offset-bottom">
+          <span class="results-message">{{results}}</span>
+        </div>
         <div class="form-group">
           <input type="submit" value="Submit Donation">
         </div>

@@ -20,19 +20,20 @@ export class ArticlesComponent implements OnInit {
   relationship: Relationship;
   private sub: any;
   private API_URL = 'https://works.bentwhiskerranch.org/jsonapi/node/article/';
+  private param = '';
 
   constructor(private articleService: ArticleService, 
     private route: ActivatedRoute,
     private router: Router) { }
 
-  getArticles(): void {
-    this.articleService.getArticles().subscribe(articles => this.articles = articles);
+  getArticles(param): void {
+    this.articleService.getArticles(param).subscribe(articles => this.articles = articles);
   }
 
 
   ngOnInit() : void {
     
-      this.getArticles();
+      this.getArticles(this.param);
   }
 
 }
