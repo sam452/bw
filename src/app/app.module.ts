@@ -18,9 +18,6 @@ import { BackendService } from './service/backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AmzwishComponent } from './amzwish/amzwish.component';
 import { AdoptComponent } from './adopt/adopt.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { ArticleDetailComponent } from './articles/article-detail.component';
-import { NoSanitizePipe } from './no-sanitize.pipe';
 
 @NgModule({
   declarations: [
@@ -35,10 +32,7 @@ import { NoSanitizePipe } from './no-sanitize.pipe';
     DonateComponent,
     PrivacyComponent,
     AmzwishComponent,
-    AdoptComponent,
-    ArticlesComponent,
-    ArticleDetailComponent,
-    NoSanitizePipe
+    AdoptComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +40,7 @@ import { NoSanitizePipe } from './no-sanitize.pipe';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers  : [BackendService],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

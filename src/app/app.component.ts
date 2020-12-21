@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Article } from './articles/article';
-
 
 @Component({
   selector: 'app-root',
@@ -9,7 +7,4 @@ import { Article } from './articles/article';
 })
 export class AppComponent {
   title = 'Bent Whisker Ranch';
-
-  article: Article;
-
 }

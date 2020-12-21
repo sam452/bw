@@ -5,7 +5,7 @@ import { User } from '../model/user';
 
 export const Api = {
     login : 'https://works.bentwhiskerranch.org/api/v1/auth/sign_in',
-    transactions : 'https://works.bentwhiskerranch.org/jsonapi/node/transaction'
+    transactions : 'https://work.bentwhiskerranch.org/jsonapi/node/transaction'
 };
 
 // export const Api = {

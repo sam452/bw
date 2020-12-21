@@ -10,8 +10,6 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { AmzwishComponent } from './amzwish/amzwish.component';
 import { AdoptComponent } from './adopt/adopt.component';
 import { FooterComponent } from './footer/footer.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { ArticleDetailComponent } from './articles/article-detail.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -23,9 +21,7 @@ const routes: Routes = [
   {path: 'header', component: HeaderComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'privacy', component: PrivacyComponent},
-  {path: 'articles', component: ArticlesComponent},
-  {path: 'article/:id', component: ArticleDetailComponent},
-  {path: '*', pathMatch: 'full', redirectTo: 'home'}
+  {path: '', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 @NgModule({
