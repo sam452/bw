@@ -2,103 +2,14 @@
   <div class="row">
     <div class="col-sm">
       <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but are many other costs associated with animal care. For gifts in kind contact us for information.</p>
-      <p>Donations made here are secure and encrypted. No card numbers are stored on this site.</p>
-      <p>You will receive an acknowledgement to the email address you provide.</p>
+      <p>At the moment we are re-working our donation form. We're grateful for your visit. If you would like to help, you may use Amazon to provide direct help to our cats.</p>
     </div>
   </div>
       
   <div class="row">
     <div class="col-sm">
       <div class="container-fluid">
-      <form action="" method="POST" id="payment-form" (submit)="getToken()" >
-      <span class="payment-message">{{message}}</span>
-
-      <div class="form-group">
-        <label for="name">Name on credit card</label>
-          <input [(ngModel)]="name" name="name" type="text" id="name" class="form-control form-control-sm">
-      </div>
-
-      <div class="form-group">
-        <label for="address1">Address (card statements sent)</label>
-          <input [(ngModel)]="address1" name="address1" type="text" class="form-control form-control-sm" id="address1">
-      </div>
-
-      <div class="form-group">
-        <div class="row no-gutters">
-          
-          <div class="col-6">
-            <label for="city">City</label>
-            <input [(ngModel)]="city" name="city" type="text" class="form-control form-control-sm" id="city">
-          </div>
-        
-          <div class="col-2">
-            <label for="state">state</label>
-            <input [(ngModel)]="state" name="state" type="text" class="form-control form-control-sm" id="state">
-          </div>
-
-        </div>
-      </div>
-
-
-
-      <div class="form-group">
-        <label for="zip">Zip code</label>
-          <input [(ngModel)]="zip" name="zip" type="text" class="form-control form-control-sm" id="zip">
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-          <input [(ngModel)]="email" name="email" type="text" class="form-control form-control-sm" id="email">
-      </div>
-
-      <div class="form-group">
-        <label for="amount">Donation amount</label>
-          <input [(ngModel)]="amount" name="amount" type="text" class="form-control form-control-sm" id="amount">
-      </div>
-
-      <div class="form-group">
-        <label for="reason">Additional note</label>
-          <input [(ngModel)]="reason" name="reason" type="text" class="form-control form-control-sm" id="reason">
-      </div>
-
-      <div class="form-group">
-        <label for="card-number">Card Number</label>
-          <input [(ngModel)]="cardNumber" name="card-number" type="text" class="form-control form-control-sm" id="card-number" data-stripe="number">
-      </div>
-
-      <div class="form-group">
-        <div class="row no-gutters">
-          <label for="expiry" class="col-8">Expiration (MM/YY)</label>
-          
-          <label for="cvc" class="col-3">CVC</label>
-        </div>
-        <div class="row">
-          <div class="col-3">
-            
-              <input [(ngModel)]="expiryMonth" name="expiry-month" type="text" class="form-control form-control-sm" id="expiry" data-stripe="exp_month">
-          </div>     
-          <div class="col-1">
-                <span> / </span>
-          </div>
-         
-          <div class="col-3">
-            <input [(ngModel)]="expiryYear" name="expiry-year" type="text"  data-stripe="exp_year" class="form-control form-control-sm">
-          </div>
-          
-        
-          <div class="col-3  ">
-            
-              <input [(ngModel)]="cvc" name="cvc" type="text"  id="cvc" class="form-control form-control-sm" data-stripe="cvc">
-          </div>
-        </div>
-      </div>
       
-        <span class="results-message">{{results}}</span>
-      
-        <div class="form-group">
-          <input type="submit" value="Submit Donation">
-        </div>
-      </form>
 
 <app-amzwish></app-amzwish>
 
