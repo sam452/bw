@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <section style="min-height:50em" class="col-md-8 mt-2">
+    
+    <article *ngIf="Article; else elseBlock" >
+      <div class="row">
+        <div class="offset-sm-1 col-xs-12 col-sm-8 col-md-7">
+          
+          <ng-template #Article >
+            <div class="article-full--image row pt-5 pb-3">
+              <div *ngFor="let image of Article.included"  >
+                <img src="{{ image.attributes.image_style_uri.large }}" class="rounded img-responsive img-fluid">
+              
+              </div>
+            </div>
+          </ng-template>
+      </div>
+    </div>
+    <div >
+      <div *ngFor="let post of article.data">
+        <div class="row">
+          <div>
+            <h2 class="col-xs-12">
+              {{ post.attributes.title }}
+            </h2>
+            <p class="col-xs-12">
+              {{ post.attributes.body.processed }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+    <ng-template #elseBlock><p>Article not found.</p></ng-template>
+  </section>
+</div>

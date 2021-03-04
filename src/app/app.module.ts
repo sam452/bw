@@ -8,7 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { SuccessComponent } from './success/success.component';
+import { SuccessesComponent } from './successes/successes.component';
+import { SuccessComponent } from './successes/success/success.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { DonateComponent } from './donate/donate.component';
@@ -22,6 +23,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticleDetailComponent } from './articles/article-detail.component';
 import { NoSanitizePipe } from './no-sanitize.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,6 @@ import { NoSanitizePipe } from './no-sanitize.pipe';
     HeaderComponent,
     ContactComponent,
     HomeComponent,
-    SuccessComponent,
     SidebarComponent,
     DonateComponent,
     PrivacyComponent,
@@ -38,7 +39,9 @@ import { NoSanitizePipe } from './no-sanitize.pipe';
     AdoptComponent,
     ArticlesComponent,
     ArticleDetailComponent,
-    NoSanitizePipe
+    NoSanitizePipe,
+    SuccessComponent,
+    SuccessesComponent
   ],
   imports: [
     BrowserModule,
