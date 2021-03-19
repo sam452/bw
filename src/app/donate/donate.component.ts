@@ -13,7 +13,7 @@ import {formatDate} from '@angular/common';
 
 export class DonateComponent {
 
-  @ViewChild('f', {static: true}) formValues;
+  @ViewChild('f') formValues;
   cardNumber: string;
   expiryMonth: string;
   expiryYear: string;

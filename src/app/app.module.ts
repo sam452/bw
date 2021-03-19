@@ -22,6 +22,7 @@ import { AdoptComponent } from './adopt/adopt.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleDetailComponent } from './articles/article-detail.component';
 import { NoSanitizePipe } from './no-sanitize.pipe';
+import { ApiPipePipe } from './api-pipe.pipe';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { NoSanitizePipe } from './no-sanitize.pipe';
     ArticleDetailComponent,
     NoSanitizePipe,
     SuccessComponent,
-    SuccessesComponent
+    SuccessesComponent,
+    ApiPipePipe
   ],
   imports: [
     BrowserModule,

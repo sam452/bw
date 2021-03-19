@@ -27,7 +27,7 @@ export class ArticleService {
   }
 
   getArticle(id: string): Observable<Article>
-  {
+    {
     if (id) {
       console.log(this.articlesUrl + '/' + id + '?include=field_image');
       return this.http.get<Article>(this.articlesUrl + '/' + id + '?include=field_image', httpOptions)

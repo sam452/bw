@@ -26,6 +26,7 @@ export class SuccessComponent implements OnInit {
   getArticle(id: string): void {
   console.log(id);
     if (id) {
+      
       this.articleService.getArticle(id).subscribe(article => this.article = article,
         error => this.errorMessage = <any>error);
       console.log(this.article);

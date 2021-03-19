@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'successes', component: SuccessesComponent},
   {path: 'success/:id', component: SuccessComponent},
+  {path: 'successes/:id', component: SuccessesComponent},
   {path: 'adopt', component: AdoptComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'donate', component: DonateComponent},
