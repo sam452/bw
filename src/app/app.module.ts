@@ -23,6 +23,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticleDetailComponent } from './articles/article-detail.component';
 import { NoSanitizePipe } from './no-sanitize.pipe';
 import { ApiPipePipe } from './api-pipe.pipe';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ApiPipePipe } from './api-pipe.pipe';
     NoSanitizePipe,
     SuccessComponent,
     SuccessesComponent,
-    ApiPipePipe
+    ApiPipePipe,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

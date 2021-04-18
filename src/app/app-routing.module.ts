@@ -13,6 +13,7 @@ import { AdoptComponent } from './adopt/adopt.component';
 import { FooterComponent } from './footer/footer.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleDetailComponent } from './articles/article-detail.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'privacy', component: PrivacyComponent},
   {path: 'articles', component: ArticlesComponent},
   {path: 'article/:id', component: ArticleDetailComponent},
+  {path: 'about', component: AboutComponent},
   {path: '*', pathMatch: 'full', redirectTo: 'home'}
 ];
 
