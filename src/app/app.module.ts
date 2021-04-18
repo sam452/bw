@@ -25,6 +25,7 @@ import { NoSanitizePipe } from './no-sanitize.pipe';
 import { ApiPipePipe } from './api-pipe.pipe';
 import { AboutComponent } from './about/about.component';
 import { AmzsmileComponent } from './amzsmile/amzsmile.component';
+import { ChewyComponent } from './chewy/chewy.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AmzsmileComponent } from './amzsmile/amzsmile.component';
     SuccessesComponent,
     ApiPipePipe,
     AboutComponent,
-    AmzsmileComponent
+    AmzsmileComponent,
+    ChewyComponent
   ],
   imports: [
     BrowserModule,
