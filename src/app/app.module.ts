@@ -24,6 +24,7 @@ import { ArticleDetailComponent } from './articles/article-detail.component';
 import { NoSanitizePipe } from './no-sanitize.pipe';
 import { ApiPipePipe } from './api-pipe.pipe';
 import { AboutComponent } from './about/about.component';
+import { AmzsmileComponent } from './amzsmile/amzsmile.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AboutComponent } from './about/about.component';
     SuccessComponent,
     SuccessesComponent,
     ApiPipePipe,
-    AboutComponent
+    AboutComponent,
+    AmzsmileComponent
   ],
   imports: [
     BrowserModule,
