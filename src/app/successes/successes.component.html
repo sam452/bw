@@ -34,15 +34,16 @@
             <div class="article--timeline">
               <div class="row">
                 <div class="article col-xs-12">
-                  <h1>{{ article.data.attributes.title}}
-                  </h1>
+                  
                   <div *ngFor="let image of article.included;">
                     <div class="col-xs-12">
                       <img src="{{ image.attributes.image_style_uri[0].large }}" >
                     </div>
                   </div>
-                  <div class="col-xs-12" [innerHtml]="html | apiPipe">
-                      {{ article.data.attributes.body.processed }} 
+                  <h1>{{ article.data.attributes.title}}
+                  </h1>
+                  <div class="col-xs-12" [innerHtml]="article.data.attributes.body.processed">
+                      
                   </div>
                     
                 </div>

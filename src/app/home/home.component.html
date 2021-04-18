@@ -2,16 +2,23 @@
   <div class="container-fluid">
   <div class="row">
     <div class="offset-sm-1 col-xs-12 col-sm-8 col-md-7">
-      <h1>Welcome to Bent Whisker Ranch!</h1>
-      <p>We're happy for your visit and are thrilled to share our mission and success stories with you! We've been animal (especially cat) lovers all our lives, so we finally decided to make it official and launch a non-profit dedicated to animal welfare!</p>
- 
-      <p>Be sure to visit our Past Successes section to see examples of how fostering saves lives!</p>
- 
-      <p>While you're here, please consider making a donation. All money received goes toward veterinary care expenses, including medications; cat food and litter; humane traps (for Trap/Neuter/Return); and more. Thank you for your support! We couldn't do it without your help.</p>
-
-      <p>Our adoption process consists of a meet and greet, completed adoption application and a small adoption fee. <a href="mailto:becky@bentwhiskerranch.org">-bw</a></p>
+      
+      <div ngIf="article">
+      <!-- <ng-template #Article> -->
+        <article >
+          <div class="row">
+            <h1 class="col-xs-12">
+              {{ article.attributes.title }}
+            </h1>
+            <div class="col-xs-12 col-md-8">
+              {{ article.attributes.body.processed }}
+            </div>
+          </div>
+        </article>
+      <!-- </ng-template> -->
+      
     </div>
-
+<span>Heck, jars</span>
     <div class="col-sm-2 col-md-3 sidebar-home">
      <div class="container">
 
@@ -28,11 +35,7 @@
       
     
     <div class="col">
-      Bent Whisker is named for the older animals, particularly cats 
-      who have to fend for themselves and live the 
-      rough life, as evidenced by how some of their
-      whiskers end up getting bent for reasons house-bound
-      animals do not.
+      Bent Whisker xxxx.
     </div>   
   </div>
   <div class="row">
