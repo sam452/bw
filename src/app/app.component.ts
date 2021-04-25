@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from './articles/article';
+// import { Article } from './articles/article';
 
 
 @Component({
@@ -10,6 +10,6 @@ import { Article } from './articles/article';
 export class AppComponent {
   title = 'Bent Whisker Ranch';
 
-  article: Article;
+  // article: Article;
 
 }

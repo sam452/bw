@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: 'articles', component: ArticlesComponent},
   {path: 'article/:id', component: ArticleDetailComponent},
   {path: 'about', component: AboutComponent},
-  {path: '*', pathMatch: 'full', redirectTo: 'home'}
+  {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 
