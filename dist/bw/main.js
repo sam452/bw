@@ -23,6 +23,62 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/about/about.component.html":
+/*!********************************************!*\
+  !*** ./src/app/about/about.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n  \n  <div class=\"row\">\n    <h1 class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">About the Bent Whisker Ranch</h1>\n    <article class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">\n      <p>Our missing is to rescue animals from harmful, neglectful, and lonely situations; foster and nurture them into happiness and self-confidence; and place them in loving, responsible permanent homes. We are also committed to educating others about animal welfare issues, including the need to spay and neuter companion animals.</p>\n      <p>We've always loved helping animals and decided to make an official organization. Bent Whisker Ranch was found April 2018 and we are so proud and honored that is happened (filling out all the forms was quite the challenge!). We work full-time so aren't (at this time) able to take in as many animlas as we'd like, bur for each animal we do take in and find a forecver home for, it sure does matter. </p>\n    </article>\n  </div>\n</div>\n<div class=\"row\">\n  <section class=\"offset-sm-1 col-md-8 mt-2\">\n    <h2>FY 2020 Statistics/Financials</h2>\n    <div class=table-responsive>\n      <table class=\"table\">\n        <thead class=\"thead-dark\">\n          <tr></tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td>$ out (adoption fees, donations, etc)</td>\n            <td>$2,822.97</td>\n          </tr>\n          <tr>\n            <td>$ out</td>\n            <td>$3,814,50</td>\n          </tr>\n\n        </tbody>\n        \n      </table>\n      <table class=\"table table-hover\">\n        <th class=\"thead-dark\">\n          <tr>\n            <th scope=\"col\">Cats taken in/adopted out</th>\n          </tr>\n        </th>\n        <tbody>\n          <tr>\n            <th scope=\"col\">Intake Date</th>\n            <th scope=\"col\">Name</th>\n            <th scope=\"col\">Source</th>\n            <th scope=\"col\">Notes</th>\n          </tr>\n          <tr>\n            <td>1/31/2020</td>\n            <td>Brody</td>\n            <td>Robertson County Animal Shelter</td>\n            <td>adopted 6/2/20</td>\n          </tr>\n          <tr>\n            <td>2/15/2020</td>\n            <td>Iggy</td>\n            <td>Owner</td>\n            <td>adopted 7/19/20</td>\n          </tr>\n          <tr>\n            <td>3/7/2020</td>\n            <td>Boots</td>\n            <td>Roberston County Animal Shelter</td>\n            <td>adopted 7/30/20</td>\n          </tr>\n          <tr>\n            <td>Russell</td>\n            <td>Robertson County Animal Shelter</td>\n            <td></td>\n          </tr>\n          <tr>\n            <td>6/18/2020</td>\n            <td>Chester</td>\n            <td>Robertson County Animal Shelter</td>\n            <td>adopted 7/27/20</td>\n          </tr>\n          <tr>\n            <td>8/22/2020</td>\n            <td>Mary Cotton</td>\n            <td>Caregiver</td>\n            <td></td>\n          </tr>\n          <tr>\n            <td>8/22/2020</td>\n            <td>Flannery Flame</td>\n            <td>Caregiver</td>\n            <td></td>\n          </tr>\n          <tr>\n            <td>10/25/2020</td>\n            <td>Geist</td>\n            <td>Rescuer</td>\n            <td>adopted 10/31/20</td>\n          </tr>\n          <tr>\n            <td>11/3/2020</td>\n            <td>Binx</td>\n            <td>Rescuer</td>\n            <td>adopted 11/14/20</td>\n          </tr>\n          <tr>\n            <td>11/3/2020</td>\n            <td>Emily</td>\n            <td>Rescuer</td>\n            <td>adopted 11/24/20</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </section>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/about/about.component.scss":
+/*!********************************************!*\
+  !*** ./src/app/about/about.component.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0L2Fib3V0LmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/about/about.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/about/about.component.ts ***!
+  \******************************************/
+/*! exports provided: AboutComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutComponent", function() { return AboutComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AboutComponent = /** @class */ (function () {
+    function AboutComponent() {
+    }
+    AboutComponent.prototype.ngOnInit = function () {
+    };
+    AboutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-about',
+            template: __webpack_require__(/*! ./about.component.html */ "./src/app/about/about.component.html"),
+            styles: [__webpack_require__(/*! ./about.component.scss */ "./src/app/about/about.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], AboutComponent);
+    return AboutComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/adopt/adopt.component.html":
 /*!********************************************!*\
   !*** ./src/app/adopt/adopt.component.html ***!
@@ -79,6 +135,62 @@ var AdoptComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/amzsmile/amzsmile.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/amzsmile/amzsmile.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<article class=\"amz\">\n  <a name=\"smile\"><h2>Choose us as your Amazon Smile recipient</h2></a>\n\n  <p>If you're able to do so, <strong>you can choose us as your charity under <a href=\"https://smile.amazon.com/ch/82-5234251\">smile.amazon.com</a></strong>. Amazon will donate a small amount from your purchases and will not add to your charges.</p>\n</article>\n"
+
+/***/ }),
+
+/***/ "./src/app/amzsmile/amzsmile.component.scss":
+/*!**************************************************!*\
+  !*** ./src/app/amzsmile/amzsmile.component.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FtenNtaWxlL2FtenNtaWxlLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/amzsmile/amzsmile.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/amzsmile/amzsmile.component.ts ***!
+  \************************************************/
+/*! exports provided: AmzsmileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AmzsmileComponent", function() { return AmzsmileComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AmzsmileComponent = /** @class */ (function () {
+    function AmzsmileComponent() {
+    }
+    AmzsmileComponent.prototype.ngOnInit = function () {
+    };
+    AmzsmileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-amzsmile',
+            template: __webpack_require__(/*! ./amzsmile.component.html */ "./src/app/amzsmile/amzsmile.component.html"),
+            styles: [__webpack_require__(/*! ./amzsmile.component.scss */ "./src/app/amzsmile/amzsmile.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], AmzsmileComponent);
+    return AmzsmileComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/amzwish/amzwish.component.html":
 /*!************************************************!*\
   !*** ./src/app/amzwish/amzwish.component.html ***!
@@ -86,7 +198,7 @@ var AdoptComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"amz\">\n  <a name=\"amazon\"><h2>How you and Amazon can help</h2></a>\n  <p>Help directly by purchasing items from our <a href=\"https://www.amazon.com/hz/wishlist/ls/2LFQ08HDKK7NE?ref_=wl_share\">Amazon Wish List</a>. Add them to your shopping cart and they will be shipped directly to help the critters.</p>\n  <p>One friend added this water fountain from our Wish List and is now enjoyed by our kittens while they are looking for a home</p>\n  <img src=\"assets/img/bw_amz_fountain.jpeg\" class=\"img-fluid float-right normal\" alt=\"Chip, Chuck enjoying a new water fountain\">\n  <p>If you're able to do so, <strong>you can choose us as your charity under smile.amazon.com</strong>. Amazon will donate a small amount from your purchases and will not add to your charges.</p>\n</div>\n"
+module.exports = "<article class=\"amz\">\n  <a name=\"amazon\"><h2>How you can help with our needs through Amazon</h2></a>\n  <p>Help directly by purchasing items from our <a href=\"https://www.amazon.com/hz/wishlist/ls/2LFQ08HDKK7NE?ref_=wl_share\">Amazon Wish List</a>. Add them to your shopping cart and they will be shipped directly to help the critters.</p>\n  <p>One friend added this water fountain from our Wish List and is now enjoyed by our kittens while they are looking for a home</p>\n  <img src=\"assets/img/bw_amz_fountain.jpeg\" class=\"img-fluid float-right\" alt=\"Chip, Chuck enjoying a new water fountain\">\n</article>\n"
 
 /***/ }),
 
@@ -135,6 +247,46 @@ var AmzwishComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/api-pipe.pipe.ts":
+/*!**********************************!*\
+  !*** ./src/app/api-pipe.pipe.ts ***!
+  \**********************************/
+/*! exports provided: ApiPipePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApiPipePipe", function() { return ApiPipePipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var dompurify__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dompurify */ "./node_modules/dompurify/dist/purify.js");
+/* harmony import */ var dompurify__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(dompurify__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+var ApiPipePipe = /** @class */ (function () {
+    function ApiPipePipe(sanitizer) {
+        this.sanitizer = sanitizer;
+    }
+    ApiPipePipe.prototype.transform = function (value, type) {
+        var sanitizedContent = dompurify__WEBPACK_IMPORTED_MODULE_3___default.a.sanitize(value);
+        //return angular.bypassSecurityTrustHtml(sanitizedContent);
+    };
+    ApiPipePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'apiPipe'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
+    ], ApiPipePipe);
+    return ApiPipePipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -150,13 +302,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _success_success_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./success/success.component */ "./src/app/success/success.component.ts");
-/* harmony import */ var _donate_donate_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./donate/donate.component */ "./src/app/donate/donate.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
-/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
-/* harmony import */ var _adopt_adopt_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./adopt/adopt.component */ "./src/app/adopt/adopt.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _successes_successes_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./successes/successes.component */ "./src/app/successes/successes.component.ts");
+/* harmony import */ var _successes_success_success_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./successes/success/success.component */ "./src/app/successes/success/success.component.ts");
+/* harmony import */ var _donate_donate_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./donate/donate.component */ "./src/app/donate/donate.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
+/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
+/* harmony import */ var _adopt_adopt_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./adopt/adopt.component */ "./src/app/adopt/adopt.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _articles_articles_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./articles/articles.component */ "./src/app/articles/articles.component.ts");
+/* harmony import */ var _articles_article_detail_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./articles/article-detail.component */ "./src/app/articles/article-detail.component.ts");
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
+
+
+
+
 
 
 
@@ -172,14 +332,19 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'navbar', component: _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_4__["NavbarComponent"] },
-    { path: 'successes', component: _success_success_component__WEBPACK_IMPORTED_MODULE_5__["SuccessComponent"] },
-    { path: 'adopt', component: _adopt_adopt_component__WEBPACK_IMPORTED_MODULE_10__["AdoptComponent"] },
-    { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_8__["ContactComponent"] },
-    { path: 'donate', component: _donate_donate_component__WEBPACK_IMPORTED_MODULE_6__["DonateComponent"] },
-    { path: 'header', component: _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"] },
-    { path: 'footer', component: _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__["FooterComponent"] },
-    { path: 'privacy', component: _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_9__["PrivacyComponent"] },
-    { path: '', pathMatch: 'full', redirectTo: 'home' }
+    { path: 'successes', component: _successes_successes_component__WEBPACK_IMPORTED_MODULE_5__["SuccessesComponent"] },
+    { path: 'success/:id', component: _successes_success_success_component__WEBPACK_IMPORTED_MODULE_6__["SuccessComponent"] },
+    { path: 'successes/:id', component: _successes_successes_component__WEBPACK_IMPORTED_MODULE_5__["SuccessesComponent"] },
+    { path: 'adopt', component: _adopt_adopt_component__WEBPACK_IMPORTED_MODULE_11__["AdoptComponent"] },
+    { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"] },
+    { path: 'donate', component: _donate_donate_component__WEBPACK_IMPORTED_MODULE_7__["DonateComponent"] },
+    { path: 'header', component: _header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"] },
+    { path: 'footer', component: _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__["FooterComponent"] },
+    { path: 'privacy', component: _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_10__["PrivacyComponent"] },
+    { path: 'articles', component: _articles_articles_component__WEBPACK_IMPORTED_MODULE_13__["ArticlesComponent"] },
+    { path: 'article/:id', component: _articles_article_detail_component__WEBPACK_IMPORTED_MODULE_14__["ArticleDetailComponent"] },
+    { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_15__["AboutComponent"] },
+    { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -271,15 +436,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
 /* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _success_success_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./success/success.component */ "./src/app/success/success.component.ts");
-/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
-/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
-/* harmony import */ var _donate_donate_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./donate/donate.component */ "./src/app/donate/donate.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _service_backend_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./service/backend.service */ "./src/app/service/backend.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _amzwish_amzwish_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./amzwish/amzwish.component */ "./src/app/amzwish/amzwish.component.ts");
-/* harmony import */ var _adopt_adopt_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./adopt/adopt.component */ "./src/app/adopt/adopt.component.ts");
+/* harmony import */ var _successes_successes_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./successes/successes.component */ "./src/app/successes/successes.component.ts");
+/* harmony import */ var _successes_success_success_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./successes/success/success.component */ "./src/app/successes/success/success.component.ts");
+/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
+/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
+/* harmony import */ var _donate_donate_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./donate/donate.component */ "./src/app/donate/donate.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _service_backend_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./service/backend.service */ "./src/app/service/backend.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _amzwish_amzwish_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./amzwish/amzwish.component */ "./src/app/amzwish/amzwish.component.ts");
+/* harmony import */ var _adopt_adopt_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./adopt/adopt.component */ "./src/app/adopt/adopt.component.ts");
+/* harmony import */ var _articles_articles_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./articles/articles.component */ "./src/app/articles/articles.component.ts");
+/* harmony import */ var _articles_article_detail_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./articles/article-detail.component */ "./src/app/articles/article-detail.component.ts");
+/* harmony import */ var _no_sanitize_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./no-sanitize.pipe */ "./src/app/no-sanitize.pipe.ts");
+/* harmony import */ var _api_pipe_pipe__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./api-pipe.pipe */ "./src/app/api-pipe.pipe.ts");
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
+/* harmony import */ var _amzsmile_amzsmile_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./amzsmile/amzsmile.component */ "./src/app/amzsmile/amzsmile.component.ts");
+/* harmony import */ var _chewy_chewy_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./chewy/chewy.component */ "./src/app/chewy/chewy.component.ts");
+
+
+
+
+
+
+
+
 
 
 
@@ -311,24 +492,242 @@ var AppModule = /** @class */ (function () {
                 _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"],
                 _contact_contact_component__WEBPACK_IMPORTED_MODULE_8__["ContactComponent"],
                 _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
-                _success_success_component__WEBPACK_IMPORTED_MODULE_10__["SuccessComponent"],
-                _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["SidebarComponent"],
-                _donate_donate_component__WEBPACK_IMPORTED_MODULE_13__["DonateComponent"],
-                _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_12__["PrivacyComponent"],
-                _amzwish_amzwish_component__WEBPACK_IMPORTED_MODULE_17__["AmzwishComponent"],
-                _adopt_adopt_component__WEBPACK_IMPORTED_MODULE_18__["AdoptComponent"]
+                _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_12__["SidebarComponent"],
+                _donate_donate_component__WEBPACK_IMPORTED_MODULE_14__["DonateComponent"],
+                _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_13__["PrivacyComponent"],
+                _amzwish_amzwish_component__WEBPACK_IMPORTED_MODULE_18__["AmzwishComponent"],
+                _adopt_adopt_component__WEBPACK_IMPORTED_MODULE_19__["AdoptComponent"],
+                _articles_articles_component__WEBPACK_IMPORTED_MODULE_20__["ArticlesComponent"],
+                _articles_article_detail_component__WEBPACK_IMPORTED_MODULE_21__["ArticleDetailComponent"],
+                _no_sanitize_pipe__WEBPACK_IMPORTED_MODULE_22__["NoSanitizePipe"],
+                _successes_success_success_component__WEBPACK_IMPORTED_MODULE_11__["SuccessComponent"],
+                _successes_successes_component__WEBPACK_IMPORTED_MODULE_10__["SuccessesComponent"],
+                _api_pipe_pipe__WEBPACK_IMPORTED_MODULE_23__["ApiPipePipe"],
+                _about_about_component__WEBPACK_IMPORTED_MODULE_24__["AboutComponent"],
+                _amzsmile_amzsmile_component__WEBPACK_IMPORTED_MODULE_25__["AmzsmileComponent"],
+                _chewy_chewy_component__WEBPACK_IMPORTED_MODULE_26__["ChewyComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormsModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClientModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"]
             ],
-            providers: [_service_backend_service__WEBPACK_IMPORTED_MODULE_15__["BackendService"]],
+            providers: [_service_backend_service__WEBPACK_IMPORTED_MODULE_16__["BackendService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/articles/article-detail.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/articles/article-detail.component.ts ***!
+  \******************************************************/
+/*! exports provided: ArticleDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArticleDetailComponent", function() { return ArticleDetailComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/article.service */ "./src/app/service/article.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var ArticleDetailComponent = /** @class */ (function () {
+    function ArticleDetailComponent(articleService, route, router) {
+        this.articleService = articleService;
+        this.route = route;
+        this.router = router;
+        this.mode = 'Observable';
+        this.id = null;
+        this.host = 'https://works.bentwhiskerranch.org';
+    }
+    ArticleDetailComponent.prototype.getArticle = function (id) {
+        var _this = this;
+        console.log(id);
+        if (id) {
+            this.articleService.getArticle(id).subscribe(function (article) { return _this.article = article; }, function (error) { return _this.errorMessage = error; });
+        }
+    };
+    ArticleDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            if (params['id']) {
+                _this.id = params['id'];
+                _this.getArticle(_this.id);
+            }
+        });
+    };
+    ArticleDetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'article-detail',
+            template: "\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n  \n        <section style=\"min-height:50em\" class=\"col-md-8 mt-2\">\n    <div class=\"article--full\">\n      <article *ngIf=\"article\">\n        \n\n        <div *ngFor=\"let image of article.included\"  class=\"article-full--image row pt-5 pb-3\">\n          <img src=\"{{ host + image.attributes.uri.url }}\" class=\"rounded img-responsive img-fluid\">\n        </div>\n <!-- article.images[0] -->\n        <div class=\"article-full--title row pb-3\">\n          <h4><a href=\"/article/{{ article.data.id }}\">{{ article.data.attributes.title }}</a></h4>\n        </div>\n        <div class=\"article-full--created row pb-3\">\n          <div>\n            <span><i class=\"fa fa-calendar\"></i> {{ article.data.attributes.created }} </span>\n            <br>\n          </div>\n        </div>\n        <div class=\"article-full--body row py-3\">\n          <div [innerHTML]=\"article.data.attributes.body.processed\" style=\"width: 100%;\"></div>\n        </div>\n      </article>\n    </div>\n    </section>\n    <aside class=\"col-md-4\">\n    </aside>\n    </div>\n</div>\n  ",
+            providers: [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"]]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], ArticleDetailComponent);
+    return ArticleDetailComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/articles/article.ts":
+/*!*************************************!*\
+  !*** ./src/app/articles/article.ts ***!
+  \*************************************/
+/*! exports provided: Article */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Article", function() { return Article; });
+var Article = /** @class */ (function () {
+    function Article() {
+    }
+    return Article;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/articles/articles.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/articles/articles.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n  <div *ngIf=\"id; then Article else Articles\" class=\"article\"></div>\n  <ng-template #Articles>\n    <section style=\"min-height:50em\" class=\"col-md-8 multi\">\n      <div class=\"article--timeline\">\n        <article *ngFor=\"let article of articles\">\n\n\n          <div class=\"article-thumbnail--title row\">\n            <h4><a routerLink=\"/article/{{ article.id }}\">{{ article.attributes.title }}</a></h4>\n            <p>{{ article.summary }}</p>\n          </div>\n          <div class=\"article-thumbnail--created row\">\n          <div>\n            <span><i class=\"fa fa-calendar\"></i> {{ article.created }} </span><br>\n          </div>\n        </div>\n        <hr>\n        </article>\n      </div>\n    </section>\n    <aside class=\"col-md-4\">\n    </aside>\n  </ng-template>\n\n  <ng-template #Article>\n    <section style=\"min-height:50em\" class=\"col-md-8 mt-2 sing\">\n    <div class=\"article--full\">\n      <article *ngFor=\"let article of articles\">\n        \n        <div class=\"article-full--image row pt-5 pb-3\">\n          <img src=\"{{ article.included[0].attributes.uri.url }}\" style=\"width:100%; height: 60%\" class=\"rounded img-fluid\">\n        </div>\n <!-- article.images[0] -->\n        <div class=\"article-full--title row pb-3\">\n          <h4><a href=\"/article/{{ article.id }}\">{{ article.attributes.title }}</a></h4>\n        </div>\n        <div class=\"article-full--created row pb-3\">\n          <div>\n            <span><i class=\"fa fa-calendar\"></i> {{ article.attributes.created }} </span>\n            <br>\n          </div>\n        </div>\n        <div class=\"article-full--body row py-3\">\n          <div [innerHTML]=\"article.attributes.body.processed\" style=\"width: 100%;\"></div>\n        </div>\n      </article>\n    </div>\n    </section>\n    <aside class=\"col-md-4\">\n    </aside>\n  </ng-template>\n</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/articles/articles.component.scss":
+/*!**************************************************!*\
+  !*** ./src/app/articles/articles.component.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FydGljbGVzL2FydGljbGVzLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/articles/articles.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/articles/articles.component.ts ***!
+  \************************************************/
+/*! exports provided: ArticlesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArticlesComponent", function() { return ArticlesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/article.service */ "./src/app/service/article.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var ArticlesComponent = /** @class */ (function () {
+    function ArticlesComponent(articleService, route, router) {
+        this.articleService = articleService;
+        this.route = route;
+        this.router = router;
+        this.mode = 'Observable';
+        this.API_URL = 'https://works.bentwhiskerranch.org/jsonapi/node/article/';
+        this.param = '';
+    }
+    ArticlesComponent.prototype.getArticles = function (param) {
+        var _this = this;
+        this.articleService.getArticles(param).subscribe(function (articles) { return _this.articles = articles; });
+    };
+    ArticlesComponent.prototype.ngOnInit = function () {
+        this.getArticles(this.param);
+    };
+    ArticlesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-articles',
+            template: __webpack_require__(/*! ./articles.component.html */ "./src/app/articles/articles.component.html"),
+            providers: [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"]],
+            styles: [__webpack_require__(/*! ./articles.component.scss */ "./src/app/articles/articles.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], ArticlesComponent);
+    return ArticlesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/chewy/chewy.component.html":
+/*!********************************************!*\
+  !*** ./src/app/chewy/chewy.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<article class=\"amz\">\n  <a name=\"chewy\"><h2>Send needed supplies through Chewy</h2></a>\n  <p>Our <a href=\"https://www.chewy.com/g/bent-whisker-ranch_b71776834\">Chewy wish list</a> will show what supplies are needed when you click the \"Wish List\" tab.</p>\n</article>\n"
+
+/***/ }),
+
+/***/ "./src/app/chewy/chewy.component.scss":
+/*!********************************************!*\
+  !*** ./src/app/chewy/chewy.component.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoZXd5L2NoZXd5LmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/chewy/chewy.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/chewy/chewy.component.ts ***!
+  \******************************************/
+/*! exports provided: ChewyComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChewyComponent", function() { return ChewyComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ChewyComponent = /** @class */ (function () {
+    function ChewyComponent() {
+    }
+    ChewyComponent.prototype.ngOnInit = function () {
+    };
+    ChewyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-chewy',
+            template: __webpack_require__(/*! ./chewy.component.html */ "./src/app/chewy/chewy.component.html"),
+            styles: [__webpack_require__(/*! ./chewy.component.scss */ "./src/app/chewy/chewy.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ChewyComponent);
+    return ChewyComponent;
 }());
 
 
@@ -398,7 +797,7 @@ var ContactComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-sm\">\n      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but are many other costs associated with animal care. For gifts in kind contact us for information.</p>\n      <p>At the moment we are re-working our donation form. We're grateful for your visit. If you would like to help, you may use Amazon to provide direct help to our cats.</p>\n    </div>\n  </div>\n      \n  <div class=\"row\">\n    <div class=\"col-sm\">\n      <div class=\"container-fluid\">\n      \n\n<app-amzwish></app-amzwish>\n\n    </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but are many other costs associated with animal care. For gifts in kind contact us for information.</p>\n\n    </div>\n  </div>\n      \n  <div class=\"row\">\n\n    <div class=\"col-9\">\n      \n      <p>Donations made here are secure and encrypted. No card numbers are stored on this site.</p>\n      <p>You will receive an acknowledgement to the email address you provide.</p>\n      <form action=\"\" method=\"POST\" id=\"payment-form\" (submit)=\"getToken()\" >\n      <span class=\"payment-message\">{{message}}</span>\n\n      <div class=\"form-group\">\n        <label for=\"name\">Name on credit card</label>\n          <input [(ngModel)]=\"name\" name=\"name\" type=\"text\" id=\"name\" class=\"form-control form-control-sm\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"address1\">Address (card statements sent)</label>\n          <input [(ngModel)]=\"address1\" name=\"address1\" type=\"text\" class=\"form-control form-control-sm\" id=\"address1\">\n      </div>\n\n      <div class=\"form-group\">\n        <div class=\"row no-gutters\">\n          \n          <div class=\"col-6\">\n            <label for=\"city\">City</label>\n            <input [(ngModel)]=\"city\" name=\"city\" type=\"text\" class=\"form-control form-control-sm\" id=\"city\">\n          </div>\n        \n          <div class=\"col-2\">\n            <label for=\"state\">state</label>\n            <input [(ngModel)]=\"state\" name=\"state\" type=\"text\" class=\"form-control form-control-sm\" id=\"state\">\n          </div>\n\n        </div>\n      </div>\n\n\n\n      <div class=\"form-group\">\n        <label for=\"zip\">Zip code</label>\n          <input [(ngModel)]=\"zip\" name=\"zip\" type=\"text\" class=\"form-control form-control-sm\" id=\"zip\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n          <input [(ngModel)]=\"email\" name=\"email\" type=\"text\" class=\"form-control form-control-sm\" id=\"email\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"amount\">Donation amount</label>\n          <input [(ngModel)]=\"amount\" name=\"amount\" type=\"text\" class=\"form-control form-control-sm\" id=\"amount\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"reason\">Additional note</label>\n          <input [(ngModel)]=\"reason\" name=\"reason\" type=\"text\" class=\"form-control form-control-sm\" id=\"reason\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"card-number\">Card Number</label>\n          <input [(ngModel)]=\"cardNumber\" name=\"card-number\" type=\"text\" class=\"form-control form-control-sm\" id=\"card-number\" data-stripe=\"number\">\n      </div>\n\n      <div class=\"form-group\">\n        <div class=\"row no-gutters\">\n          <label for=\"expiry\" class=\"col-5\">Expiration: (MM/YY)</label>\n          \n          <label for=\"cvc\" class=\"col-1\">CVC</label>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-2\">\n            \n              <input [(ngModel)]=\"expiryMonth\" name=\"expiry-month\" type=\"text\" class=\"form-control form-control-sm\" placeholder=\"MM\" id=\"expiry\" data-stripe=\"exp_month\">\n          </div>     \n          <div style=\"width: 10px;\">\n                <span> / </span>\n          </div>\n         \n          <div class=\"col-2\">\n            <input [(ngModel)]=\"expiryYear\" name=\"expiry-year\" type=\"text\"  data-stripe=\"exp_year\" placeholder=\"YY\" class=\"form-control form-control-sm\">\n          </div>\n          \n        \n          <div class=\"col-2\">\n            \n              <input [(ngModel)]=\"cvc\" placeholder=\"CVC\" name=\"cvc\" type=\"text\"  id=\"cvc\" class=\"form-control form-control-sm\" data-stripe=\"cvc\">\n          </div>\n        </div>\n      </div>\n        \n        <div *ngIf=\"results\" class=\"message-success offset-bottom\">\n          <span class=\"results-message\">{{results}}</span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"submit\" value=\"Submit Donation\">\n        </div>\n      </form>\n\n      \n\n\n    \n    </div>\n      <div class=\"col sidebar-home\">\n        \n          <app-amzwish></app-amzwish>\n          <app-amzsmile></app-amzsmile>\n          <app-chewy></app-chewy>\n        \n      </div>\n\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -409,7 +808,7 @@ module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RvbmF0ZS9kb25hdGUuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = ".message-success {\n  background-color: #48711b; }\n\n.offset-bottom {\n  margin-bottom: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYW0vYXBwcy9idy9zcmMvYXBwL2RvbmF0ZS9kb25hdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5QkFBa0MsRUFBQTs7QUFHcEM7RUFDRSxtQkFBbUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2RvbmF0ZS9kb25hdGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWVzc2FnZS1zdWNjZXNzIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDcyLCAxMTMsIDI3KTtcbn1cblxuLm9mZnNldC1ib3R0b20ge1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -526,7 +925,7 @@ var DonateComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer>\n  <div class=\"row\">\n    <div class=\"col-xs-12 col-sm-3\">\n     <h3>\n       Contact\n     </h3>\n     <address>\n       <strong>Bent Whisker Ranch, LLC</strong>\n       <br>7540 Harper Rd.\n       <br>Joelton, TN 37080\n       <br><abbr title=\"Phone\">Ph:</abbr> +1 615 873 0108\n     </address>\n    </div>\n    <div class=\"col-xs-12 col-sm-8 align-self-center\">\n      <p class=\"small\">Bent Whisker Ranch is organized exclusively for charitable, religious, educational, and scientific purposes, including, for such purposes, the making of distributions to organizations that quality as exempt organizations described under Section 501c(3) of the Internal Revenue Code, or corresponding section of any future federal tax code.\n      </p>\n      <p class=\"small\">\n        See our <a href=\"/privacy\">Privacy policy</a>.\n      </p>\n    </div>\n    <div class=\"col-xs-6 col-sm-1 align-self-center social\">\n      <a href=\"https://www.facebook.com/BentWhiskerRanch/\"><img class=\"social-b\" src=\"assets/flogo_RGB_HEX-114.svg\" style=\" \"></a>   \n    \n      <a href=\"https://www.instagram.com/bentwhiskerranch/\" class=\"social-b\"><svg xmlns=\"http://www.w3.org/2000/svg\" style=\"background-color: rgb(237,19,118); width=100px; fill: #fff;\" viewBox=\"-600 -600 3700 3700\" ><path class=\"social-i\" d=\"M825.4 1238c0-227.9 184.7-412.7 412.6-412.7 227.9 0 412.7 184.8 412.7 412.7 0 227.9-184.8 412.7-412.7 412.7-227.9 0-412.6-184.8-412.6-412.7m-223.1 0c0 351.1 284.6 635.7 635.7 635.7s635.7-284.6 635.7-635.7-284.6-635.7-635.7-635.7S602.3 886.9 602.3 1238m1148-660.9c0 82 66.5 148.6 148.6 148.6 82 0 148.6-66.6 148.6-148.6s-66.5-148.5-148.6-148.5-148.6 66.5-148.6 148.5M737.8 2245.7c-120.7-5.5-186.3-25.6-229.9-42.6-57.8-22.5-99-49.3-142.4-92.6-43.3-43.3-70.2-84.5-92.6-142.3-17-43.6-37.1-109.2-42.6-229.9-6-130.5-7.2-169.7-7.2-500.3s1.3-369.7 7.2-500.3c5.5-120.7 25.7-186.2 42.6-229.9 22.5-57.8 49.3-99 92.6-142.4 43.3-43.3 84.5-70.2 142.4-92.6 43.6-17 109.2-37.1 229.9-42.6 130.5-6 169.7-7.2 500.2-7.2 330.6 0 369.7 1.3 500.3 7.2 120.7 5.5 186.2 25.7 229.9 42.6 57.8 22.4 99 49.3 142.4 92.6 43.3 43.3 70.1 84.6 92.6 142.4 17 43.6 37.1 109.2 42.6 229.9 6 130.6 7.2 169.7 7.2 500.3 0 330.5-1.2 369.7-7.2 500.3-5.5 120.7-25.7 186.3-42.6 229.9-22.5 57.8-49.3 99-92.6 142.3-43.3 43.3-84.6 70.1-142.4 92.6-43.6 17-109.2 37.1-229.9 42.6-130.5 6-169.7 7.2-500.3 7.2-330.5 0-369.7-1.2-500.2-7.2M727.6 7.5c-131.8 6-221.8 26.9-300.5 57.5-81.4 31.6-150.4 74-219.3 142.8C139 276.6 96.6 345.6 65 427.1 34.4 505.8 13.5 595.8 7.5 727.6 1.4 859.6 0 901.8 0 1238s1.4 378.4 7.5 510.4c6 131.8 26.9 221.8 57.5 300.5 31.6 81.4 73.9 150.5 142.8 219.3 68.8 68.8 137.8 111.1 219.3 142.8 78.8 30.6 168.7 51.5 300.5 57.5 132.1 6 174.2 7.5 510.4 7.5 336.3 0 378.4-1.4 510.4-7.5 131.8-6 221.8-26.9 300.5-57.5 81.4-31.7 150.4-74 219.3-142.8 68.8-68.8 111.1-137.9 142.8-219.3 30.6-78.7 51.6-168.7 57.5-300.5 6-132.1 7.4-174.2 7.4-510.4s-1.4-378.4-7.4-510.4c-6-131.8-26.9-221.8-57.5-300.5-31.7-81.4-74-150.4-142.8-219.3C2199.4 139 2130.3 96.6 2049 65c-78.8-30.6-168.8-51.6-300.5-57.5-132-6-174.2-7.5-510.4-7.5-336.3 0-378.4 1.4-510.5 7.5\"/></svg></a>\n    </div>\n  </div>\n</footer>"
+module.exports = "<footer>\n  <div class=\"row\">\n    <div class=\"col-xs-12 col-sm-3\">\n     <h3>\n       Contact\n     </h3>\n     <address>\n       <strong>Bent Whisker Ranch</strong>\n       <br>Joelton, TN 37080\n       <br><abbr title=\"Phone\">Ph:</abbr> +1 615 873 0108\n       <br>becky@bentwhiskerranch.org\n     </address>\n    </div>\n    <div class=\"col-xs-12 col-sm-8 align-self-center\">\n      <p class=\"small\">Bent Whisker Ranch is organized exclusively for charitable, religious, educational, and scientific purposes, including, for such purposes, the making of distributions to organizations that quality as exempt organizations described under Section 501c(3) of the Internal Revenue Code, or corresponding section of any future federal tax code.\n      </p>\n      <p class=\"small\">\n        See our <a href=\"/privacy\">Privacy policy</a>.\n      </p>\n    </div>\n    <div class=\"col-xs-6 col-sm-1 align-self-center social\">\n      <a href=\"https://www.facebook.com/BentWhiskerRanch/\"><img class=\"social-b\" src=\"assets/flogo_RGB_HEX-114.svg\" style=\" \"></a>   \n    \n      <a href=\"https://www.instagram.com/bentwhiskerranch/\" class=\"social-b\"><svg xmlns=\"http://www.w3.org/2000/svg\" style=\"background-color: rgb(237,19,118); width=100px; fill: #fff;\" viewBox=\"-600 -600 3700 3700\" ><path class=\"social-i\" d=\"M825.4 1238c0-227.9 184.7-412.7 412.6-412.7 227.9 0 412.7 184.8 412.7 412.7 0 227.9-184.8 412.7-412.7 412.7-227.9 0-412.6-184.8-412.6-412.7m-223.1 0c0 351.1 284.6 635.7 635.7 635.7s635.7-284.6 635.7-635.7-284.6-635.7-635.7-635.7S602.3 886.9 602.3 1238m1148-660.9c0 82 66.5 148.6 148.6 148.6 82 0 148.6-66.6 148.6-148.6s-66.5-148.5-148.6-148.5-148.6 66.5-148.6 148.5M737.8 2245.7c-120.7-5.5-186.3-25.6-229.9-42.6-57.8-22.5-99-49.3-142.4-92.6-43.3-43.3-70.2-84.5-92.6-142.3-17-43.6-37.1-109.2-42.6-229.9-6-130.5-7.2-169.7-7.2-500.3s1.3-369.7 7.2-500.3c5.5-120.7 25.7-186.2 42.6-229.9 22.5-57.8 49.3-99 92.6-142.4 43.3-43.3 84.5-70.2 142.4-92.6 43.6-17 109.2-37.1 229.9-42.6 130.5-6 169.7-7.2 500.2-7.2 330.6 0 369.7 1.3 500.3 7.2 120.7 5.5 186.2 25.7 229.9 42.6 57.8 22.4 99 49.3 142.4 92.6 43.3 43.3 70.1 84.6 92.6 142.4 17 43.6 37.1 109.2 42.6 229.9 6 130.6 7.2 169.7 7.2 500.3 0 330.5-1.2 369.7-7.2 500.3-5.5 120.7-25.7 186.3-42.6 229.9-22.5 57.8-49.3 99-92.6 142.3-43.3 43.3-84.6 70.1-142.4 92.6-43.6 17-109.2 37.1-229.9 42.6-130.5 6-169.7 7.2-500.3 7.2-330.5 0-369.7-1.2-500.2-7.2M727.6 7.5c-131.8 6-221.8 26.9-300.5 57.5-81.4 31.6-150.4 74-219.3 142.8C139 276.6 96.6 345.6 65 427.1 34.4 505.8 13.5 595.8 7.5 727.6 1.4 859.6 0 901.8 0 1238s1.4 378.4 7.5 510.4c6 131.8 26.9 221.8 57.5 300.5 31.6 81.4 73.9 150.5 142.8 219.3 68.8 68.8 137.8 111.1 219.3 142.8 78.8 30.6 168.7 51.5 300.5 57.5 132.1 6 174.2 7.5 510.4 7.5 336.3 0 378.4-1.4 510.4-7.5 131.8-6 221.8-26.9 300.5-57.5 81.4-31.7 150.4-74 219.3-142.8 68.8-68.8 111.1-137.9 142.8-219.3 30.6-78.7 51.6-168.7 57.5-300.5 6-132.1 7.4-174.2 7.4-510.4s-1.4-378.4-7.4-510.4c-6-131.8-26.9-221.8-57.5-300.5-31.7-81.4-74-150.4-142.8-219.3C2199.4 139 2130.3 96.6 2049 65c-78.8-30.6-168.8-51.6-300.5-57.5-132-6-174.2-7.5-510.4-7.5-336.3 0-378.4 1.4-510.5 7.5\"/></svg></a>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -638,7 +1037,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">\n      <h1>Welcome to Bent Whisker Ranch!</h1>\n      <p>We're happy for your visit and are thrilled to share our mission and success stories with you! We've been animal (especially cat) lovers all our lives, so we finally decided to make it official and launch a non-profit dedicated to animal welfare!</p>\n \n      <p>Be sure to visit our Past Successes section to see examples of how fostering saves lives!</p>\n \n      <p>While you're here, please consider making a donation. All money received goes toward veterinary care expenses, including medications; cat food and litter; humane traps (for Trap/Neuter/Return); and more. Thank you for your support! We couldn't do it without your help.</p>\n\n      <p>Our adoption process consists of a meet and greet, completed adoption application and a small adoption fee. <a href=\"mailto:becky@bentwhiskerranch.org\">-bw</a></p>\n    </div>\n\n    <div class=\"col-sm-2 col-md-3 sidebar-home\">\n     <div class=\"container\">\n\n       <app-sidebar></app-sidebar>\n\n    </div>\n  </div>\n  <div class=\"col-sm-1\">\n    \n  </div>\n  </div>\n  <div class=\"boiler\">\n    <div class=\"row\">\n      \n    \n    <div class=\"col\">\n      Bent Whisker is named for the older animals, particularly cats \n      who have to fend for themselves and live the \n      rough life, as evidenced by how some of their\n      whiskers end up getting bent for reasons house-bound\n      animals do not.\n    </div>   \n  </div>\n  <div class=\"row\">\n    <div class=\"col\">\n      <h3>\n        Our mission\n      </h3>\n      <p>... is to rescue animals from harmful, negligent, and lonely situations; foster and nurture them into happiness and self-confidence; and place them in loving, responsible permanent homes.</p>\n\n      <p>We are also committed to educating others about animal welfare issues, including the need to spay and neuter companion animals.</p>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">\n      <h1>Welcome to Bent Whisker Ranch!</h1>\n      <p>We're happy for your visit and are thrilled to share our mission and success stories with you! We've been animal (especially cat) lovers all our lives, so we finally decided to make it official and launch a non-profit dedicated to animal welfare!</p>\n\n      <p>Be sure to visit our Past Success section to see examples of how fostering saves lives!</p>\n      <p>Our adoption process consists of a meet and greet, completed adoption application and a small adoption fee. <a href=\"mailto:becky@bentwhiskerranch.org\">bw</a></p>\n    </div>\n    <aside class=\"col-sm-3 col-xs-12 col-md-3 sidebar-home\">\n      <app-sidebar></app-sidebar>\n    </aside>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -649,7 +1048,7 @@ module.exports = "\n  <div class=\"container-fluid\">\n  <div class=\"row\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sidebar-home {\n  background-color: #94b589;\n  padding: 10px 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYW0vYXBwcy9idy9zcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHlCQUF3QztFQUN4QyxrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zaWRlYmFyLWhvbWUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDE0OCwxODEsMTM3LDEuMDApO1xuICBwYWRkaW5nOiAxMHB4IDE1cHg7XG5cbn0iXX0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJ9 */"
 
 /***/ }),
 
@@ -665,19 +1064,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _service_backend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/backend.service */ "./src/app/service/backend.service.ts");
-
 
 
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(bs) {
-        this.bs = bs;
+    function HomeComponent() {
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.bs.login({
-            email: 'sam@bentwhiskerranch.org',
-            password: 'frist19'
-        }).then(function (res) { return console.log(res); });
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -685,7 +1077,7 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.scss */ "./src/app/home/home.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -733,7 +1125,7 @@ var User = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\"\n          data-target=\"#navbarTogglerBW\" aria-controls=\"navbarTogglerBW\"\n          aria-expanded=\"false\"\n          aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <a class=\"navbar-brand\" href=\"#!\">Bent Whisker</a>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarTogglerBW\">\n    <ul class=\"navbar-nav mr-auto mt-2 mt-md-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['/home']\">Home\n          <span class=\"sr-only\">(current)</span>\n        </a>\n      </li>\n\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['/contact']\">Contact</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['/successes']\">Past Successes</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['/donate']\">How to help</a>\n      </li>\n\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n    </form>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\"\n          data-target=\"#navbarTogglerBW\" aria-controls=\"navbarTogglerBW\"\n          aria-expanded=\"false\"\n          aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <a class=\"navbar-brand\" href=\"#!\">Bent Whisker</a>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarTogglerBW\">\n    <ul class=\"navbar-nav mr-auto mt-2 mt-md-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['/home']\">Home\n          <span class=\"sr-only\">(current)</span>\n        </a>\n      </li>\n\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['/about']\">About</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['/successes']\">Past Successes</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['/donate']\">How to help</a>\n      </li>\n\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n    </form>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -776,6 +1168,42 @@ var NavbarComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/no-sanitize.pipe.ts":
+/*!*************************************!*\
+  !*** ./src/app/no-sanitize.pipe.ts ***!
+  \*************************************/
+/*! exports provided: NoSanitizePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoSanitizePipe", function() { return NoSanitizePipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+
+
+
+var NoSanitizePipe = /** @class */ (function () {
+    function NoSanitizePipe(domSanitizer) {
+        this.domSanitizer = domSanitizer;
+    }
+    NoSanitizePipe.prototype.transform = function (html) {
+        return this.domSanitizer.bypassSecurityTrustHtml(html);
+    };
+    NoSanitizePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'noSanitize'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
+    ], NoSanitizePipe);
+    return NoSanitizePipe;
 }());
 
 
@@ -832,6 +1260,73 @@ var PrivacyComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], PrivacyComponent);
     return PrivacyComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/article.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/service/article.service.ts ***!
+  \********************************************/
+/*! exports provided: ArticleService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArticleService", function() { return ArticleService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
+
+
+
+// import { Image } from '../articles/image';
+var httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' })
+};
+var ArticleService = /** @class */ (function () {
+    function ArticleService(http) {
+        this.http = http;
+        this.articlesUrl = 'https://works.bentwhiskerranch.org/jsonapi/node/article';
+    }
+    ArticleService.prototype.getArticles = function (param) {
+        return this.http.get(this.articlesUrl + param, httpOptions);
+    };
+    ArticleService.prototype.getArticle = function (id) {
+        console.log(this.articlesUrl + '/' + id + '?include=field_image');
+        if (id) {
+            return this.http.get(this.articlesUrl + '/' + id + '?include=field_image', httpOptions);
+        }
+    };
+    // getArticle(id: string): Observable<Article>
+    // {
+    //   if (id) {
+    //     return this.http.get<Article>(this.articlesUrl + '/' + id + '?include=field_image', httpOptions)
+    //       .pipe(
+    //         map(res => res['body'])
+    //        )
+    //       .pipe(
+    //         catchError(this.handleError([]))
+    //   );
+    //   } 
+    // }
+    ArticleService.prototype.handleError = function (result) {
+        return function (error) {
+            console.error(error);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(result);
+        };
+    };
+    ArticleService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], ArticleService);
+    return ArticleService;
 }());
 
 
@@ -961,32 +1456,32 @@ var SidebarComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/success/success.component.html":
-/*!************************************************!*\
-  !*** ./src/app/success/success.component.html ***!
-  \************************************************/
+/***/ "./src/app/successes/success/success.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/successes/success/success.component.html ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container main-container\">\n\n  <article>\n    <div class=\"row\">\n      <a name=\"chuck\">\n      <h2>Chuck a perfect fit for his new home!</h2></a>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-md-8\">\n        <p>Chuck, who was rescued with his brother from a large surrender situation, was discovered by a family visiting the Ranch. All he needed was someone to see how snuggly he is and that's all it took to fall in love. </p>\n        <p>Come see his brother and see for yourself.\n        </p>\n\n      </div>\n\n      <div class=\"col-xs-12 col-md-4\">\n        <div class=\"\">\n         <img src=\"assets/img/chip_adopted.jpg\" class=\"img-fluid float-right normal\" alt=\"Chuck adopted\">\n        </div>\n      \n\n      </div>\n    </div>\n  </article>\n\n  \n  <article>\n    <div class=\"row\">\n      <a name=\"dante\">\n      <h2>Dante finds home quickly</h2></a>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-md-8\">\n        <p>\n          Dante, now known as Ollie, was rescued from a cat-hoarding situation in Cocke County, T, along with his sister, Dove. Within 24 hours of arriving in Nashville, he had charmed \"Ms. M\" and they are now lving their happiest and best life! We love these new love connections.\n        </p>\n      </div>\n      <div class=\"col-xs-12 col-md-4\">\n        <div class=\"\">\n         <img src=\"assets/img/dante-adopt1.jpeg\" class=\"img-fluid float-right normal\" alt=\"Ollie\">\n        </div>\n      </div>\n    </div>\n  </article>\n\n\n\n  <article>\n  <div class=\"row\">\n    <a name=\"jewel\">\n    <h2 class=\"\">Jewel beats death for forever home!</h2></a>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-xs-12 col-md-8\">\n<p>In November of 2017, we got word that a beautiful but very sick tortie was at a local shelter but was going to be euthanized soon. She'd been seen twice by the vets but her vomiting, diarrhea, and weight loss continued.</p>\n\n<p>Sam and I had 21 years with a little tortie named Francine. She was the light of our lives. We just knew we couldn't let this young tortie be put to sleep.</p>\n\n<p>So, one day during my lunch break, I rushed up to the shelter, pulled her out, and took her straight to the vet down the road. For some reason, the name Jewel popped into my head and that became her name.</p>\n\n<p>She had many vet visits and was put on multiple medications but nothing worked. She just got sicker.</p>\n\n<p>Finally, the vet and I were at our wit's end, and we thought this pretty girl was at her end, too. The vet said: \"I don't know what else to do. We can't find anything wrong. Would you be willing, if I taught you, to take home a bag of fluids and give them to her subQ?  I said yes because I would do anything to see this girl perk up and have hope.</p>\n\n<p>Within 48 hours, she was a different cat! She showed interest in life and food and attention!</p>\n\n<p>A few days later, she was playing ping pong with my nieces!</p>\n\n<h3>Fostering Saves Lives!</h3>\n\n<p>All Jewel needed was some support and time. And that's exactly what fostering does.</p>\n\n<p>In January 2018, Jewel found her forever home. She now has two boys to play with (because she LOVES ping pong balls) and is living the life of a queen!</p>\n\n<p>We are thankful for the awesome family that adopted her and we wish them a very long and happy life together!</p>\n    </div>\n  \n  \n    <div class=\"col-xs-12 col-md-4\">\n     <div class=\"\">\n       <img src=\"assets/img/jewel-forever.JPG\" class=\"img-fluid float-right normal\" alt=\"Jewel going to her forever home!\">\n     </div>\n       <div class=\"\"> \n         <img src=\"assets/img/jewel-sick.JPG\" class=\"img-fluid float-right normal\" alt=\"Jewel wasn't getting better.\">\n       </div>\n       \n       <div class=\"\"> \n         <img src=\"assets/img/jewel-kit.JPG\" class=\"img-fluid float-right normal\" alt=\"Tools to keep Jewel alive.\">\n       </div>\n    </div>\n  </div>\n  </article>\n  \n</div>"
+module.exports = "<div class=\"container-fluid\">\n  <section style=\"min-height:50em\" class=\"col-md-8 mt-2\">\n    \n    <article *ngIf=\"Article; else elseBlock\" >\n      <div class=\"row\">\n        <div class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">\n          \n          <ng-template #Article >\n            <div class=\"article-full--image row pt-5 pb-3\">\n              <div *ngFor=\"let image of Article.included\"  >\n                <img src=\"{{ image.attributes.image_style_uri.large }}\" class=\"rounded img-responsive img-fluid\">\n              \n              </div>\n            </div>\n          </ng-template>\n      </div>\n    </div>\n    <div >\n      <div *ngFor=\"let post of article.data\">\n        <div class=\"row\">\n          <div>\n            <h2 class=\"col-xs-12\">\n              {{ post.attributes.title }}\n            </h2>\n            <p class=\"col-xs-12\">\n              {{ post.attributes.body.processed }}\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </article>\n    <ng-template #elseBlock><p>Article not found.</p></ng-template>\n  </section>\n</div>\n"
 
 /***/ }),
 
-/***/ "./src/app/success/success.component.scss":
-/*!************************************************!*\
-  !*** ./src/app/success/success.component.scss ***!
-  \************************************************/
+/***/ "./src/app/successes/success/success.component.scss":
+/*!**********************************************************!*\
+  !*** ./src/app/successes/success/success.component.scss ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1Y2Nlc3Mvc3VjY2Vzcy5jb21wb25lbnQuc2NzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1Y2Nlc3Nlcy9zdWNjZXNzL3N1Y2Nlc3MuY29tcG9uZW50LnNjc3MifQ== */"
 
 /***/ }),
 
-/***/ "./src/app/success/success.component.ts":
-/*!**********************************************!*\
-  !*** ./src/app/success/success.component.ts ***!
-  \**********************************************/
+/***/ "./src/app/successes/success/success.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/successes/success/success.component.ts ***!
+  \********************************************************/
 /*! exports provided: SuccessComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -995,22 +1490,140 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuccessComponent", function() { return SuccessComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/article.service */ "./src/app/service/article.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
 
 
 var SuccessComponent = /** @class */ (function () {
-    function SuccessComponent() {
+    function SuccessComponent(articleService, route, router) {
+        this.articleService = articleService;
+        this.route = route;
+        this.router = router;
+        this.mode = 'Observable';
+        this.id = null;
     }
+    SuccessComponent.prototype.getArticle = function (id) {
+        var _this = this;
+        console.log(id);
+        if (id) {
+            this.articleService.getArticle(id).subscribe(function (article) { return _this.article = article; }, function (error) { return _this.errorMessage = error; });
+            console.log(this.article);
+        }
+    };
     SuccessComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            if (params['id']) {
+                _this.id = params['id'];
+                _this.getArticle(_this.id);
+            }
+        });
     };
     SuccessComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-success',
-            template: __webpack_require__(/*! ./success.component.html */ "./src/app/success/success.component.html"),
-            styles: [__webpack_require__(/*! ./success.component.scss */ "./src/app/success/success.component.scss")]
+            template: __webpack_require__(/*! ./success.component.html */ "./src/app/successes/success/success.component.html"),
+            providers: [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"]],
+            styles: [__webpack_require__(/*! ./success.component.scss */ "./src/app/successes/success/success.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], SuccessComponent);
     return SuccessComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/successes/successes.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/successes/successes.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container main-container\">\n\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <div *ngIf=\"id; then Article else Articles\" class=\"article\"></div>\n        <ng-template #Articles>\n          <section style=\"min-height:50em\" class=\"col-md-8 multi\">\n            <div class=\"article--timeline\">\n              <article *ngFor=\"let article of articles.data; let i = index;\">\n                <div class=\"row\">\n                  <div class=\"article-thumbnail--title col-xs-12 col-sm-2\">\n                    <img src=\"{{ articles.included[i].attributes.image_style_uri[2].thumbnail }}\" class=\"rounded img-responsive img-fluid\">\n                  </div>\n                  <div class=\"col-xs-12 col-sm-10\">\n                  <div class=\"row\">\n                    <h2 class=\"col-xs-12 \"><a routerLink=\"/successes/{{ article.id }}\">{{ article.attributes.title }}</a>\n                    </h2>\n                    <div class=\"col-xs-12 col-md-8\">\n                      <p>{{ article.attributes.body.summary }}</p>\n                      \n                    </div>\n                  </div>\n                  \n                  </div>\n                 </div>\n                 <hr>\n               </article>     \n              </div>\n              \n             </section> \n        </ng-template>\n        <ng-template #Article>\n          <section class=\"col-md-8 multi\">\n            <div class=\"article--timeline\">\n              <div class=\"row\">\n                <div class=\"article col-xs-12\">\n                  \n                  <div *ngFor=\"let image of article.included;\">\n                    <div class=\"col-xs-12\">\n                      <img src=\"{{ image.attributes.image_style_uri[0].large }}\" >\n                    </div>\n                  </div>\n                  <h1>{{ article.data.attributes.title}}\n                  </h1>\n                  <div class=\"col-xs-12\" [innerHtml]=\"article.data.attributes.body.processed\">\n                      \n                  </div>\n                    \n                </div>\n              </div>\n            </div>\n          </section>\n        </ng-template>\n\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/successes/successes.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/successes/successes.component.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1Y2Nlc3Nlcy9zdWNjZXNzZXMuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/successes/successes.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/successes/successes.component.ts ***!
+  \**************************************************/
+/*! exports provided: SuccessesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuccessesComponent", function() { return SuccessesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/article.service */ "./src/app/service/article.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _articles_article__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../articles/article */ "./src/app/articles/article.ts");
+
+
+
+
+
+var SuccessesComponent = /** @class */ (function () {
+    // private API_URL = 'https://works.bentwhiskerranch.org/jsonapi/node/article?fields[node--article]=title&fields[taxonomy_term--status]=adopted&include=field_tags';
+    function SuccessesComponent(articleService, route, router) {
+        this.articleService = articleService;
+        this.route = route;
+        this.router = router;
+        this.mode = 'Observable';
+        this.selectedArticle = _articles_article__WEBPACK_IMPORTED_MODULE_4__["Article"];
+        this.param = '?filter[condition][path]=field_tags.name&filter[condition][value]=adopted&include=field_image';
+        this.id = null;
+    }
+    SuccessesComponent.prototype.getArticles = function (param) {
+        var _this = this;
+        this.articleService.getArticles(param).subscribe(function (articles) { return _this.articles = articles; });
+    };
+    SuccessesComponent.prototype.getArticle = function (id) {
+        var _this = this;
+        this.articleService.getArticle(id).subscribe(function (article) { return _this.article = article; });
+    };
+    SuccessesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            if (params['id']) {
+                _this.id = params['id'];
+                _this.getArticle(_this.id);
+            }
+            else {
+                _this.getArticles(_this.param);
+            }
+        });
+    };
+    SuccessesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-successes',
+            template: __webpack_require__(/*! ./successes.component.html */ "./src/app/successes/successes.component.html"),
+            providers: [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"]],
+            styles: [__webpack_require__(/*! ./successes.component.scss */ "./src/app/successes/successes.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], SuccessesComponent);
+    return SuccessesComponent;
 }());
 
 
