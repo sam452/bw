@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BackendService } from '../service/backend.service';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +7,10 @@ import { BackendService } from '../service/backend.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public bs: BackendService) {
-  }
-
+  constructor() { }
+ 
+ 
   ngOnInit() {
-    this.bs.login({
-      email: 'sam@bentwhiskerranch.org',
-      password: 'frist19'
-    }).then(res => console.log(res));
-
   }
 
 }

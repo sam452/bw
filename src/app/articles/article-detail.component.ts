@@ -65,6 +65,7 @@ import { Relationship } from '../service/relationship';
 //     } 
 //   }
 
+
 //   getToDos() {
 //   	this.articleService.getTodos().subscribe(
 //   		(response) => {
@@ -79,6 +80,15 @@ import { Relationship } from '../service/relationship';
 //         this.getArticle(this.id);
 //         }
 //       });
+
+  // ngOnInit() : void {
+  //   this.sub = this.route.params.subscribe(params => {
+  //     if (params['id']) {
+  //       this.id = params['id'];
+  //       this.getArticle(this.id);
+  //       }
+  //     });
+
     
 //   }
 

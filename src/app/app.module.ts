@@ -8,7 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { SuccessComponent } from './success/success.component';
+import { SuccessesComponent } from './successes/successes.component';
+import { SuccessComponent } from './successes/success/success.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { DonateComponent } from './donate/donate.component';
@@ -18,6 +19,14 @@ import { BackendService } from './service/backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AmzwishComponent } from './amzwish/amzwish.component';
 import { AdoptComponent } from './adopt/adopt.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { ArticleDetailComponent } from './articles/article-detail.component';
+import { NoSanitizePipe } from './no-sanitize.pipe';
+import { ApiPipePipe } from './api-pipe.pipe';
+import { AboutComponent } from './about/about.component';
+import { AmzsmileComponent } from './amzsmile/amzsmile.component';
+import { ChewyComponent } from './chewy/chewy.component';
+
 
 @NgModule({
   declarations: [
@@ -27,12 +36,20 @@ import { AdoptComponent } from './adopt/adopt.component';
     HeaderComponent,
     ContactComponent,
     HomeComponent,
-    SuccessComponent,
     SidebarComponent,
     DonateComponent,
     PrivacyComponent,
     AmzwishComponent,
-    AdoptComponent
+    AdoptComponent,
+    ArticlesComponent,
+    ArticleDetailComponent,
+    NoSanitizePipe,
+    SuccessComponent,
+    SuccessesComponent,
+    ApiPipePipe,
+    AboutComponent,
+    AmzsmileComponent,
+    ChewyComponent
   ],
   imports: [
     BrowserModule,
