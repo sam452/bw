@@ -35,6 +35,13 @@ export class ArticleService {
      } 
   }
 
+  getArticleXimg(id: string): Observable<Article>
+  {
+    if (id) {
+      return this.http.get<Article>(this.articlesUrl + '/' + id, httpOptions)
+    }
+  }
+
   // getArticle(id: string): Observable<Article>
   // {
   //   if (id) {
