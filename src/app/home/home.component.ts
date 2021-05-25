@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   articles: Article[];
   article: Article;
   mode = 'Observable';
-  id = "4fe1ddbe-af94-4888-9cf2-3d032e0fd1c";
 
   private sub: any;
   private host: 'https://works.bentwhiskerranch.org/';
@@ -42,7 +41,8 @@ export class HomeComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       // if (params['id']) {
         const id = this.id;
-        this.getArticle(id);
+       
+        this.getArticles(this.param);
         // }
         // else {
           // this.getArticles(this.param);
