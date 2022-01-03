@@ -14,6 +14,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { DonateComponent } from './donate/donate.component';
 import { FormsModule } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder } from'@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BackendService } from './service/backend.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -55,7 +57,8 @@ import { ChewyComponent } from './chewy/chewy.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
