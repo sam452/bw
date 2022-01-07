@@ -13,110 +13,138 @@
       <p>Donations made here are secure and encrypted. No card numbers are stored on this site.</p>
       <p>You will receive an acknowledgement to the email address you provide.</p>
      
-        <form [formGroup]='donateForm' (ngSubmit)="getToken()">
+      <form [formGroup]="donateForm"#formDir="ngForm">
+
       <span class="payment-message">{{message}}</span>
+
+      <div [hidden]="formDir.submitted">
 
         <div class="form-group">
           <label for="name">Name on credit card</label>
-            <input type="text" id="name" formControlName="name" class="form-control form-control-sm" > 
-            <!-- [(ngModel)]="name"  -->
-            
+            <input type="text" id="name" formControlName="name" class="form-control form-control-sm" required> 
+          
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+              class="alert alert-danger">
+              <div *ngIf="name.errors?.required">Name on credit card is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address1">Address (where card statements sent)</label>
+            <input formControlName="address1" name="address1" type="text" class="form-control form-control-sm" id="address1" required>
+          <div *ngIf="address1.invalid && (address1.dirty || address1.touched)"
+                class="alert alert-danger">
               
-            
+            <div *ngIf="address1.errors?.required">Address is required.</div>
+          </div>
         </div>
 
-      <div class="form-group">
-        <label for="address1">Address (card statements sent)</label>
-          <input formControlName="address1" name="address1" type="text" class="form-control form-control-sm" id="address1">
-      </div>
-
-      <div class="form-group">
-        <div class="row no-gutters">
+        <div class="form-group">
+          <div class="row no-gutters">
+            <div class="col-6">
+              <label for="city">City</label>
+              <input formControlName="city" name="city" type="text" class="form-control form-control-sm" id="city">
+            </div>
           
-          <div class="col-6">
-            <label for="city">City</label>
-            <input formControlName="city" name="city" type="text" class="form-control form-control-sm" id="city">
+            <div class="col-2">
+              <label for="state">state</label>
+              <input formControlName="state" name="state" type="text" class="form-control form-control-sm" id="state">
+            </div>
           </div>
-        
-          <div class="col-2">
-            <label for="state">state</label>
-            <input formControlName="state" name="state" type="text" class="form-control form-control-sm" id="state">
-          </div>
-
         </div>
-      </div>
 
+        <div class="form-group">
+          <label for="zip">Zip code</label>
+            <input formControlName="zip" name="zip" type="text" class="form-control form-control-sm" id="zip" required>
+             <div *ngIf="zip.errors?.required">Billing zip code is required.</div>
+        </div>
 
-
-      <div class="form-group">
-        <label for="zip">Zip code</label>
-          <input formControlName="zip" name="zip" type="text" class="form-control form-control-sm" id="zip">
-          <!-- <div *ngIf="donateForm.value.zip.invalid && (donateForm.value.zip.dirty || donateForm.value.zip.touched)"
-    class="alert alert-danger">
-             <div *ngIf="donateForm.value.zip.errors?.['required']">Billing zip code is required.</div> 
-          </div>-->
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-          <input formControlName="email" name="email" type="text" class="form-control form-control-sm" id="email">
-      </div>
-
-      <div class="form-group">
-        <label for="amount">Donation amount</label>
-          <input formControlName="amount" name="amount" type="text" class="form-control form-control-sm" id="amount">
-      </div>
-
-      <div class="form-group">
-        <label for="reason">Additional note</label>
-          <input formControlName="reason" name="reason" type="text" class="form-control form-control-sm" id="reason">
-      </div>
-
-      <div class="form-group">
-        <label for="card-number">Card Number</label>
-          <input formControlName="cardNumber" name="card-number" type="text" class="form-control form-control-sm" id="card-number" data-stripe="number">
-      </div>
-
-      <div class="form-group">
-        <div class="row no-gutters">
-          <label for="expiry" class="col-5">Expiration: (MM/YY)</label>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input formControlName="email" name="email" type="text" class="form-control form-control-sm" id="email" required>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="alert alert-danger">
           
-          <label for="cvc" class="col-1">CVC</label>
-        </div>
-        <div class="row">
-          <div class="col-2">
-            
-              <input formControlName="expiryMonth" name="expiry-month" type="text" class="form-control form-control-sm" placeholder="MM" id="expiry" data-stripe="exp_month">
-          </div>     
-          <div style="width: 10px;">
-                <span> / </span>
+            <div *ngIf="email.errors?.required">Name on credit card is required.</div>
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Donation amount</label>
+          <input formControlName="amount" name="amount" type="text" class="form-control form-control-sm" id="amount" required>
+          <div *ngIf="amount.invalid && (amount.dirty || amount.touched)"
+              class="alert alert-danger">
+            
+            <div *ngIf="amount.errors?.required">Please enter the amount of your donation.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Additional note</label>
+            <input formControlName="reason" name="reason" type="text" class="form-control form-control-sm" id="reason">
+        </div>
+
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+            <input formControlName="cardNumber" name="cardNumber" type="text" class="form-control form-control-sm" id="cardNumber" data-stripe="number" required>
+            <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)"
+              class="alert alert-danger">
+              <div *ngIf="cardNumber.errors?.required">Credit card is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row no-gutters">
+            <label for="expiry" class="col-5">Expiration: (MM/YY)</label>
+            
+            <label for="cvc" class="col-1">CVC</label>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              
+                <input formControlName="expiryMonth" name="expiryMonth" type="text" class="form-control form-control-sm" placeholder="MM" id="expiryMonth" data-stripe="exp_month" required>
+                <div *ngIf="expiryMonth.invalid && (expiryMonth.dirty || expiryMonth.touched)"
+              class="alert alert-danger">
+                  <div *ngIf="expiryMonth.errors?.required">Card expiration month is required.</div>
+                </div>
+            </div>     
+            <div style="width: 10px;">
+                  <span> / </span>
+            </div>
          
-          <div class="col-2">
-            <input formControlName="expiryYear" name="expiry-year" type="text"  data-stripe="exp_year" placeholder="YY" class="form-control form-control-sm">
-          </div>
+            <div class="col-2">
+              <input formControlName="expiryYear" name="expiryYear" type="text"  data-stripe="exp_year" placeholder="YY" class="form-control form-control-sm" required>
+              <div *ngIf="expiryYear.invalid && (expiryYear.dirty || expiryYear.touched)"
+              class="alert alert-danger">
+                <div *ngIf="expiryYear.errors?.required">Card expiration year is required.</div>
+              </div>
+            </div>
           
         
-          <div class="col-2">
-            
-              <input formControlName="cvc" placeholder="CVC" name="cvc" type="text"  id="cvc" class="form-control form-control-sm" data-stripe="cvc">
+            <div class="col-2">
+              
+                <input formControlName="cvc" placeholder="CVC" name="cvc" type="text"  id="cvc" class="form-control form-control-sm" data-stripe="cvc" required>
+                <div *ngIf="name.invalid && (cvc.dirty || cvc.touched)"
+              class="alert alert-danger">
+                <div *ngIf="cvc.errors?.required">Address verification code on credit card is required.</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-        
+
         <div *ngIf="results" class="message-success offset-bottom">
           <span class="results-message">{{results}}</span>
         </div>
+
         <div class="form-group">
          <!--  <input type="submit" value="Submit Donation"> -->
-         <button type="submit" [disabled]="!donateForm.valid">Submit donation</button>
+         <button type="submit" [disabled]="donateForm.invalid">Submit donation</button>
         </div>
+
+      </div>
+    
       </form>
 
-      
-
-
-    
     </div>
       <div class="col sidebar-home">
         

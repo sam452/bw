@@ -1,9 +1,7 @@
-import { Component, NgZone, ViewChild } from '@angular/core';
+import { Component, NgZone, ViewChild, OnInit } from '@angular/core';
 import { BackendService } from '../service/backend.service';
 import { formatDate } from '@angular/common';
-import { FormBuilder } from '@angular/forms';
-import { Validators } from '@angular/forms';
-import { FormArray } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,33 +11,69 @@ import { FormArray } from '@angular/forms';
   styleUrls: ['./donate.component.scss']
 })
 
-export class DonateComponent {
+export class DonateComponent implements OnInit {
 
   // if(!window['Stripe']) {
   //   alert('Oops! Stripe did not initialize properly.');
   //   return;
   // }
+  donateForm: FormGroup;
 
-  donateForm = this.fb.group({
-    name: ['', Validators.required],
-    cardNumber: ['', Validators.required],
-    expiryMonth: ['', Validators.required],
-    expiryYear: ['', Validators.required],
-    cvc: ['', Validators.required],
-    address1: ['', Validators.required],
-    city: [''],
-    state: [''],
-    zip: ['', Validators.required],
-    transaction_code: [''],
-    reason: [''],
-    amount: ['', Validators.required],
-    transaction_date: [''],
-    stripeToken: [''],
-    email: ['', Validators.required],
-    aliases: this.fb.array([
-      this.fb.control('')
-    ])
-  });
+  ngOnInit(): void {
+    this.donateForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
+      cardNumber: new FormControl('',[Validators.required]),
+      expiryMonth: new FormControl('', [Validators.required]),
+      expiryYear: new FormControl('', [Validators.required]),
+      cvc: new FormControl('', [Validators.required]),
+      address1: new FormControl('', [Validators.required]),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl('', [Validators.required]),
+      transaction_code: new FormControl(''),
+      reason: new FormControl(''),
+      amount: new FormControl('', [Validators.required]),
+      transaction_date: new FormControl(''),
+      stripeToken: new FormControl(''),
+      email: new FormControl('', [Validators.required]),
+    });
+  }
+
+  get name() { return this.donateForm.get('name')!; }
+  get cardNumber() { return this.donateForm.get('cardNumber')!; }
+  get expiryMonth() { return this.donateForm.get('expiryMonth')!; }
+  get expiryYear() { return this.donateForm.get('expiryYear')!; }
+  get cvc() { return this.donateForm.get('cvc')!; }
+  get address1() { return this.donateForm.get('address1')!; }
+  get city() { return this.donateForm.get('city')!; }
+  get state() { return this.donateForm.get('state')!; }
+  get zip() { return this.donateForm.get('zip')!; }
+  get transaction_code() { return this.donateForm.get('transaction_code')!; }
+  get reason() { return this.donateForm.get('reason')!; }
+  get amount() { return this.donateForm.get('amount')!; }
+  get transaction_date() { return this.donateForm.get('transaction_date')!; }
+  get email() { return this.donateForm.get('email')!; }
+
+  // donateForm = this.fb.group({
+  //   name: ['', Validators.required],
+  //   cardNumber: ['', Validators.required],
+  //   expiryMonth: ['', Validators.required],
+  //   expiryYear: ['', Validators.required],
+  //   cvc: ['', Validators.required],
+  //   address1: ['', Validators.required],
+  //   city: [''],
+  //   state: [''],
+  //   zip: ['', Validators.required],
+  //   transaction_code: [''],
+  //   reason: [''],
+  //   amount: ['', Validators.required],
+  //   transaction_date: [''],
+  //   stripeToken: [''],
+  //   email: ['', Validators.required],
+  //   aliases: this.fb.array([
+  //     this.fb.control('')
+  //   ])
+  // });
   
   // @ViewChild('f') formValues;
   // cardNumber: string;
@@ -63,16 +97,17 @@ export class DonateComponent {
 
   myDate = new Date();
   
-  constructor(private bs: BackendService, private fb: FormBuilder, private _zone: NgZone) {
+  constructor(private bs: BackendService, private _zone: NgZone) {
   }
 
-  get aliases() {
-    return this.donateForm.get('aliases') as FormArray;
-  }
+  // get aliases() {
 
-  addAlias() {
-    this.aliases.push(this.fb.control(''));
-  }
+  //   return this.donateForm.get('aliases') as FormArray;
+  // }
+
+  // addAlias() {
+  //   this.aliases.push(this.fb.control(''));
+  // }
 
   loadStripe() {
    
@@ -92,6 +127,7 @@ export class DonateComponent {
   getToken() {
     this.message = 'Loading...';
     console.log(this.donateForm.value);
+    // console.log(this.donateForm.zip.errors);
     (<any>window).Stripe.card.createToken({
 
       number: this.donateForm.value.cardNumber,
