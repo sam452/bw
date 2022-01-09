@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  \n  <div class=\"row\">\n    <h1 class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">About the Bent Whisker Ranch</h1>\n    <article class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">\n      <p>Our missing is to rescue animals from harmful, neglectful, and lonely situations; foster and nurture them into happiness and self-confidence; and place them in loving, responsible permanent homes. We are also committed to educating others about animal welfare issues, including the need to spay and neuter companion animals.</p>\n      <p>We've always loved helping animals and decided to make an official organization. Bent Whisker Ranch was found April 2018 and we are so proud and honored that is happened (filling out all the forms was quite the challenge!). We work full-time so aren't (at this time) able to take in as many animlas as we'd like, bur for each animal we do take in and find a forecver home for, it sure does matter. </p>\n    </article>\n  </div>\n</div>\n<div class=\"row\">\n  <section class=\"offset-sm-1 col-md-8 mt-2\">\n    <h2>FY 2020 Statistics/Financials</h2>\n    <div class=table-responsive>\n      <table class=\"table\">\n        <thead class=\"thead-dark\">\n          <tr></tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td>$ in (adoption fees, donations, etc)</td>\n            <td>$2,822.97</td>\n          </tr>\n          <tr>\n            <td>$ out</td>\n            <td>$3,814,50</td>\n          </tr>\n\n        </tbody>\n        \n      </table>\n      <table class=\"table table-hover\">\n        <th class=\"thead-dark\">\n          <tr>\n            <th scope=\"col\">Cats taken in/adopted out</th>\n          </tr>\n        </th>\n        <tbody>\n          <tr>\n            <th scope=\"col\">Intake Date</th>\n            <th scope=\"col\">Name</th>\n            <th scope=\"col\">Source</th>\n            <th scope=\"col\">Notes</th>\n          </tr>\n          <tr>\n            <td>1/31/2020</td>\n            <td>Brody</td>\n            <td>Robertson County Animal Shelter</td>\n            <td>adopted 6/2/20</td>\n          </tr>\n          <tr>\n            <td>2/15/2020</td>\n            <td>Iggy</td>\n            <td>Owner</td>\n            <td>adopted 7/19/20</td>\n          </tr>\n          <tr>\n            <td>3/7/2020</td>\n            <td>Boots</td>\n            <td>Roberston County Animal Shelter</td>\n            <td>adopted 7/30/20</td>\n          </tr>\n          <tr>\n            <td>Russell</td>\n            <td>Robertson County Animal Shelter</td>\n            <td></td>\n          </tr>\n          <tr>\n            <td>6/18/2020</td>\n            <td>Chester</td>\n            <td>Robertson County Animal Shelter</td>\n            <td>adopted 7/27/20</td>\n          </tr>\n          <tr>\n            <td>8/22/2020</td>\n            <td>Mary Cotton</td>\n            <td>Caregiver</td>\n            <td></td>\n          </tr>\n          <tr>\n            <td>8/22/2020</td>\n            <td>Flannery Flame</td>\n            <td>Caregiver</td>\n            <td></td>\n          </tr>\n          <tr>\n            <td>10/25/2020</td>\n            <td>Geist</td>\n            <td>Rescuer</td>\n            <td>adopted 10/31/20</td>\n          </tr>\n          <tr>\n            <td>11/3/2020</td>\n            <td>Binx</td>\n            <td>Rescuer</td>\n            <td>adopted 11/14/20</td>\n          </tr>\n          <tr>\n            <td>11/3/2020</td>\n            <td>Emily</td>\n            <td>Rescuer</td>\n            <td>adopted 11/24/20</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </section>\n</div>"
+module.exports = "<div class=\"container-fluid\">\n  \n  <div class=\"row\">\n\n    <div *ngIf=\"articles then Articles\"></div>\n    <ng-template #Articles>\n\n      <article *ngFor=\"let article of articles.data;\" class=\"offset-sm-1 col-xs-12 col-sm-10\">\n        <h1 class=\"col-xs-12\">\n              {{ article.attributes.title }}\n        </h1>\n        <div class=\"col-xs-12\" [innerHtml]=\"article.attributes.body.processed\">\n        </div>\n\n      </article>\n\n    </ng-template>\n\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -57,20 +57,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutComponent", function() { return AboutComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/article.service */ "./src/app/service/article.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
 
 
 var AboutComponent = /** @class */ (function () {
-    function AboutComponent() {
+    function AboutComponent(articleService, route, router) {
+        this.articleService = articleService;
+        this.route = route;
+        this.router = router;
+        this.mode = 'Observable';
+        this.id = null;
+        this.param = '?filter[condition][path]=field_tags.name&filter[condition][value]=about&include=field_image';
     }
+    AboutComponent.prototype.getArticles = function (param) {
+        var _this = this;
+        this.articleService.getArticles(param).subscribe(function (articles) { return _this.articles = articles; });
+    };
+    AboutComponent.prototype.getArticle = function () {
+        var _this = this;
+        this.articleService.getArticleXimg(this.id).subscribe(function (article) { return _this.article = article; });
+    };
     AboutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.getArticles(_this.param);
+        });
     };
     AboutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-about',
             template: __webpack_require__(/*! ./about.component.html */ "./src/app/about/about.component.html"),
+            providers: [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"]],
             styles: [__webpack_require__(/*! ./about.component.scss */ "./src/app/about/about.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], AboutComponent);
     return AboutComponent;
 }());
@@ -480,6 +505,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -511,7 +537,8 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormsModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ReactiveFormsModule"]
             ],
             providers: [_service_backend_service__WEBPACK_IMPORTED_MODULE_16__["BackendService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -797,7 +824,7 @@ var ContactComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but are many other costs associated with animal care. For gifts in kind contact us for information.</p>\n\n    </div>\n  </div>\n      \n  <div class=\"row\">\n\n    <div class=\"col-9\">\n      \n      <p>Donations made here are secure and encrypted. No card numbers are stored on this site.</p>\n      <p>You will receive an acknowledgement to the email address you provide.</p>\n      <form action=\"\" method=\"POST\" id=\"payment-form\" (submit)=\"getToken()\" >\n      <span class=\"payment-message\">{{message}}</span>\n\n      <div class=\"form-group\">\n        <label for=\"name\">Name on credit card</label>\n          <input [(ngModel)]=\"name\" name=\"name\" type=\"text\" id=\"name\" class=\"form-control form-control-sm\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"address1\">Address (card statements sent)</label>\n          <input [(ngModel)]=\"address1\" name=\"address1\" type=\"text\" class=\"form-control form-control-sm\" id=\"address1\">\n      </div>\n\n      <div class=\"form-group\">\n        <div class=\"row no-gutters\">\n          \n          <div class=\"col-6\">\n            <label for=\"city\">City</label>\n            <input [(ngModel)]=\"city\" name=\"city\" type=\"text\" class=\"form-control form-control-sm\" id=\"city\">\n          </div>\n        \n          <div class=\"col-2\">\n            <label for=\"state\">state</label>\n            <input [(ngModel)]=\"state\" name=\"state\" type=\"text\" class=\"form-control form-control-sm\" id=\"state\">\n          </div>\n\n        </div>\n      </div>\n\n\n\n      <div class=\"form-group\">\n        <label for=\"zip\">Zip code</label>\n          <input [(ngModel)]=\"zip\" name=\"zip\" type=\"text\" class=\"form-control form-control-sm\" id=\"zip\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n          <input [(ngModel)]=\"email\" name=\"email\" type=\"text\" class=\"form-control form-control-sm\" id=\"email\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"amount\">Donation amount</label>\n          <input [(ngModel)]=\"amount\" name=\"amount\" type=\"text\" class=\"form-control form-control-sm\" id=\"amount\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"reason\">Additional note</label>\n          <input [(ngModel)]=\"reason\" name=\"reason\" type=\"text\" class=\"form-control form-control-sm\" id=\"reason\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"card-number\">Card Number</label>\n          <input [(ngModel)]=\"cardNumber\" name=\"card-number\" type=\"text\" class=\"form-control form-control-sm\" id=\"card-number\" data-stripe=\"number\">\n      </div>\n\n      <div class=\"form-group\">\n        <div class=\"row no-gutters\">\n          <label for=\"expiry\" class=\"col-5\">Expiration: (MM/YY)</label>\n          \n          <label for=\"cvc\" class=\"col-1\">CVC</label>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-2\">\n            \n              <input [(ngModel)]=\"expiryMonth\" name=\"expiry-month\" type=\"text\" class=\"form-control form-control-sm\" placeholder=\"MM\" id=\"expiry\" data-stripe=\"exp_month\">\n          </div>     \n          <div style=\"width: 10px;\">\n                <span> / </span>\n          </div>\n         \n          <div class=\"col-2\">\n            <input [(ngModel)]=\"expiryYear\" name=\"expiry-year\" type=\"text\"  data-stripe=\"exp_year\" placeholder=\"YY\" class=\"form-control form-control-sm\">\n          </div>\n          \n        \n          <div class=\"col-2\">\n            \n              <input [(ngModel)]=\"cvc\" placeholder=\"CVC\" name=\"cvc\" type=\"text\"  id=\"cvc\" class=\"form-control form-control-sm\" data-stripe=\"cvc\">\n          </div>\n        </div>\n      </div>\n        \n        <div *ngIf=\"results\" class=\"message-success offset-bottom\">\n          <span class=\"results-message\">{{results}}</span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"submit\" value=\"Submit Donation\">\n        </div>\n      </form>\n\n      \n\n\n    \n    </div>\n      <div class=\"col sidebar-home\">\n        \n          <app-amzwish></app-amzwish>\n          <app-amzsmile></app-amzsmile>\n          <app-chewy></app-chewy>\n        \n      </div>\n\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but are many other costs associated with animal care. For gifts in kind contact us for information.</p>\n\n    </div>\n  </div>\n      \n  <div class=\"row\">\n\n    <div class=\"col-9\">\n      \n      <p>Donations made here are secure and encrypted. No card numbers are stored on this site.</p>\n      <p>You will receive an acknowledgement to the email address you provide.</p>\n     \n      <form #f=\"ngForm\" name=\"donationForm\" (ngSubmit)=\"f.form.valid && getToken(f)\" id=\"donateForm\" novalidate >\n\n      <span class=\"valid-feedback\">{{message}}</span>\n      <div [hidden]=\"f.submitted\">\n\n        <div class=\"form-group\">\n          <label for=\"name\">Name on credit card</label>\n            <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control form-control-sm\" [(ngModel)]=\"donation.name\" #name=\"ngModel\"  required> \n          \n            <div *ngIf=\"name.invalid && (name.dirty || name.touched)\"\n              class=\"alert alert-danger\">\n              <div *ngIf=\"name.errors?.required\">Name on credit card is required.</div>\n            </div>\n        </div>\n        \n        <div class=\"form-group\">\n          <label for=\"address1\">Address (where card statements sent)</label>\n            <input  #address1=\"ngModel\" name=\"address1\"  type=\"text\" class=\"form-control form-control-sm\" id=\"address1\" [(ngModel)]=\"donation.address1\" required>\n          <div *ngIf=\"address1.invalid && (address1.dirty || address1.touched)\"\n                class=\"alert alert-danger\">\n              \n            <div *ngIf=\"address1.errors?.required\">Address is required.</div>\n          </div>\n        </div>\n \n        <div class=\"row no-gutters\">\n          <div class=\"col-6\">\n            <label for=\"city\">City</label>\n            <input #city=\"ngModel\" [(ngModel)]=\"donation.city\" name=\"city\" type=\"text\" class=\"form-control form-control-sm\" id=\"city\">\n          </div>\n        \n          <div class=\"col-2\">\n            <label for=\"state\">state</label>\n            <input #state=\"ngModel\"  [(ngModel)]=\"donation.state\" name=\"state\" type=\"text\" class=\"form-control form-control-sm\" id=\"state\">\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"zip\">Zip code</label>\n            <input #zip=\"ngModel\" [(ngModel)]=\"donation.zip\" name=\"zip\" type=\"text\" class=\"form-control form-control-sm\" id=\"zip\" required>\n            <div *ngIf=\"zip.invalid && (zip.dirty || zip.touched)\"\n            class=\"alert alert-danger\">\n             <div *ngIf=\"zip.errors?.required\">Billing zip code is required.</div>\n           </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email</label>\n          <input #email=\"ngModel\" [(ngModel)]=\"donation.email\" name=\"email\" type=\"text\" class=\"form-control form-control-sm\" id=\"email\" required>\n          <div *ngIf=\"email.invalid && (email.dirty || email.touched)\"\n            class=\"alert alert-danger\">\n            <div *ngIf=\"email.errors?.required\">Name on credit card is required.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"amount\">Donation amount</label>\n          <input #amount=\"ngModel\" [(ngModel)]=\"donation.amount\" name=\"amount\" type=\"text\" class=\"form-control form-control-sm\" id=\"amount\" required>\n          <div *ngIf=\"amount.invalid && (amount.dirty || amount.touched)\"\n              class=\"alert alert-danger\">\n            \n            <div *ngIf=\"amount.errors?.required\">Please enter the amount of your donation.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"reason\">Additional note</label>\n            <input #reason=\"ngModel\" [(ngModel)]=\"donation.reason\" name=\"reason\" type=\"text\" class=\"form-control form-control-sm\" id=\"reason\">\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"cardNumber\">Card Number</label>\n            <input #cardNumber=\"ngModel\" [(ngModel)]=\"donation.cardNumber\" name=\"cardNumber\" type=\"text\" class=\"form-control form-control-sm\" id=\"cardNumber\" data-stripe=\"number\" required>\n            <div *ngIf=\"cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)\"\n              class=\"alert alert-danger\">\n              <div *ngIf=\"cardNumber.errors?.required\">Credit card is required.</div>\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"row no-gutters\">\n            <label for=\"expiry\" class=\"col-5\">Expiration: (MM/YY)</label>\n            \n            <label for=\"cvc\" class=\"col-1\">CVC</label>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-2\">\n              \n                <input #expiryMonth=\"ngModel\" [(ngModel)]=\"donation.expiryMonth\" name=\"expiryMonth\" type=\"text\" class=\"form-control form-control-sm\" placeholder=\"MM\" id=\"expiryMonth\" data-stripe=\"exp_month\" required>\n                <div *ngIf=\"expiryMonth.invalid && (expiryMonth.dirty || expiryMonth.touched)\"\n              class=\"alert alert-danger\">\n                  <div *ngIf=\"expiryMonth.errors?.required\">Card expiration month is required.</div>\n                </div>\n            </div>     \n            <div style=\"width: 10px;\">\n                  <span> / </span>\n            </div>\n         \n            <div class=\"col-2\">\n              <input #expiryYear=\"ngModel\" [(ngModel)]=\"donation.expiryYear\" name=\"expiryYear\" type=\"text\"  data-stripe=\"exp_year\" placeholder=\"YY\" class=\"form-control form-control-sm\" required>\n              <div *ngIf=\"expiryYear.invalid && (expiryYear.dirty || expiryYear.touched)\"\n              class=\"alert alert-danger\">\n                <div *ngIf=\"expiryYear.errors?.required\">Card expiration year is required.</div>\n              </div>\n            </div>\n          \n        \n            <div class=\"col-2\">\n              \n              <input #cvc=\"ngModel\" [(ngModel)]=\"donation.cvc\" placeholder=\"CVC\" name=\"cvc\" type=\"text\"  id=\"cvc\" class=\"form-control form-control-sm\" data-stripe=\"cvc\" required minlength=\"3\">\n              <div *ngIf=\"cvc.invalid && (cvc.dirty || cvc.touched)\"\n              class=\"alert alert-danger\">\n                <div *ngIf=\"cvc.errors?.required\">Address verification code on credit card is required.</div>\n                <div *ngIf=\"cvc.errors?.minlength\">Address verification code on credit card has at least three characters</div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n      </div>\n      <div *ngIf=\"results\" class=\"message-success offset-bottom\">\n          <span class=\"results-message\">{{results}}</span>\n      </div>\n\n        <div class=\"form-group\">\n         <!--  <input type=\"submit\" value=\"Submit Donation\"> -->\n         <button type=\"submit\" [disabled]=\"f.invalid\">Submit donation</button>\n        </div>\n\n      \n      </form>\n    \n    </div>\n      <div class=\"col sidebar-home\">\n        \n          <app-amzwish></app-amzwish>\n          <app-amzsmile></app-amzsmile>\n          <app-chewy></app-chewy>\n        \n      </div>\n\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -830,26 +857,77 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 var DonateComponent = /** @class */ (function () {
-    function DonateComponent(_zone, bs) {
-        this._zone = _zone;
+    function DonateComponent(bs, _zone) {
         this.bs = bs;
+        this._zone = _zone;
+        // if(!window['Stripe']) {
+        //   alert('Oops! Stripe did not initialize properly.');
+        //   return;
+        // }
+        // donateForm: FormGroup;
+        // this.donateForm = this.fb.group({
+        //   name: ['', Validators.required],
+        //   cardNumber: ['', Validators.required],
+        //   expiryMonth: ['', Validators.required],
+        //   expiryYear: ['', Validators.required],
+        //   cvc: ['', Validators.required],
+        //   address1: ['', Validators.required],
+        //   city: [''],
+        //   state: [''],
+        //   zip: ['', Validators.required],
+        //   transaction_code: [''],
+        //   reason: [''],
+        //   amount: ['', Validators.required],
+        //   transaction_date: [''],
+        //   stripeToken: [''],
+        //   email: ['', Validators.required],
+        //   aliases: this.fb.array([
+        //     this.fb.control('')
+        //   ])
+        // });
+        // @ViewChild('f') formValues;
+        // cardNumber: string;
+        // expiryMonth: string;
+        // expiryYear: string;
+        // cvc: string;
+        // name: string;
+        // address1: string;
+        // zip: string;
+        // transaction_code: string;
+        // reason: string;
+        // amount: any;
+        // transaction_date: string;
+        // stripeToken: string;
+        // email: string;
+        // city: string;
+        // state: string;
+        this.donation = {};
         this.myDate = new Date();
     }
-    DonateComponent.prototype.getToken = function () {
+    // get aliases() {
+    //   return this.donateForm.get('aliases') as FormArray;
+    // }
+    // addAlias() {
+    //   this.aliases.push(this.fb.control(''));
+    // }
+    DonateComponent.prototype.getToken = function (donateForm) {
         var _this = this;
+        console.log(this.donation.amount);
         this.message = 'Loading...';
         window.Stripe.card.createToken({
-            number: this.cardNumber,
-            exp_month: this.expiryMonth,
-            exp_year: this.expiryYear,
-            cvc: this.cvc
+            number: this.donation.cardNumber,
+            exp_month: this.donation.expiryMonth,
+            exp_year: this.donation.expiryYear,
+            cvc: this.donation.cvc
         }, function (status, response) {
+            console.log("status " + status);
             // Wrapping inside the Angular zone
             _this._zone.run(function () {
                 if (status === 200) {
                     var today = new Date();
-                    var i_amount = +_this.amount * 100;
+                    var i_amount = +_this.donation.amount * 100;
                     var i_amounts = String(i_amount);
                     var i_amountf = parseFloat(i_amounts).toFixed(2);
                     i_amount = +i_amountf;
@@ -858,13 +936,13 @@ var DonateComponent = /** @class */ (function () {
                             type: 'node--transaction',
                             attributes: {
                                 field_stripe_token: response.id,
-                                title: _this.name,
-                                field_email: _this.email,
-                                field_address: [_this.address1],
-                                field_city: _this.city,
-                                field_state: _this.state,
-                                field_zip: _this.zip,
-                                field_reason: _this.reason,
+                                title: _this.donation.name,
+                                field_email: _this.donation.email,
+                                field_address: [_this.donation.address1],
+                                field_city: _this.donation.city,
+                                field_state: _this.donation.state,
+                                field_zip: _this.donation.zip,
+                                field_reason: _this.donation.reason,
                                 field_amount: i_amount,
                                 field_transaction_date: Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(new Date(), 'yyyy-MM-dd', 'en'),
                                 field_transaction_code: 'D',
@@ -876,22 +954,27 @@ var DonateComponent = /** @class */ (function () {
                             }
                         }
                     }).then(function (res) { return console.log('success'); });
-                    _this.message = "";
-                    _this.results = "Success! Your donation of $" + _this.amount + " was successful.";
-                    _this.name = '';
-                    _this.email = '';
-                    _this.address1 = '';
-                    _this.city = '';
-                    _this.state = '';
-                    _this.zip = '';
-                    _this.reason = '';
-                    _this.amount = null;
-                    _this.expiryMonth = '';
-                    _this.expiryYear = '';
-                    _this.cvc = '';
-                    _this.transaction_date = '';
-                    _this.transaction_code = '';
-                    _this.cardNumber = '';
+                    _this.message = "Success! Your donation of $" + _this.donation.amount + " was successful.";
+                    console.log(donateForm);
+                    _this.donation = {
+                        name: '',
+                        results: "Success! Your donation of $" + _this.donation.amount + " was successful.",
+                        message: '',
+                        email: '',
+                        address1: '',
+                        city: '',
+                        state: '',
+                        zip: '',
+                        reason: '',
+                        amount: '',
+                        expiryMonth: '',
+                        expiryYear: '',
+                        cvc: '',
+                        transaction_date: '',
+                        transaction_code: '',
+                        cardNumber: ''
+                    };
+                    donateForm.resetForm();
                 }
                 else {
                     _this.message = response.error.message;
@@ -899,17 +982,25 @@ var DonateComponent = /** @class */ (function () {
             });
         });
     };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('f'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], DonateComponent.prototype, "formValues", void 0);
+    DonateComponent.prototype.loadStripe = function () {
+        if (!window.document.getElementById('stripe-custom-form-script')) {
+            var s = window.document.createElement("script");
+            s.id = "stripe-custom-form-script";
+            s.type = "text/javascript";
+            s.src = "https://js.stripe.com/v2/";
+            s.onload = function () {
+                window['Stripe'].setPublishableKey('pk_test_tWiAp5GaM7pUWYJN5JdyTXE100U9FLDvjk');
+            };
+            window.document.body.appendChild(s);
+        }
+    };
     DonateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-donate',
             template: __webpack_require__(/*! ./donate.component.html */ "./src/app/donate/donate.component.html"),
             styles: [__webpack_require__(/*! ./donate.component.scss */ "./src/app/donate/donate.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _service_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
     ], DonateComponent);
     return DonateComponent;
 }());
@@ -1037,7 +1128,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">\n      <h1>Welcome to Bent Whisker Ranch!</h1>\n      <p>We're happy for your visit and are thrilled to share our mission and success stories with you! We've been animal (especially cat) lovers all our lives, so we finally decided to make it official and launch a non-profit dedicated to animal welfare!</p>\n\n      <p>Be sure to visit our Past Success section to see examples of how fostering saves lives!</p>\n      <p>Our adoption process consists of a meet and greet, completed adoption application and a small adoption fee. <a href=\"mailto:becky@bentwhiskerranch.org\">bw</a></p>\n    </div>\n    <aside class=\"col-sm-3 col-xs-12 col-md-3 sidebar-home\">\n      <app-sidebar></app-sidebar>\n    </aside>\n  </div>\n</div>"
+module.exports = "\n  <div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"offset-sm-1 col-xs-12 col-sm-8 col-md-7\">\n      \n      <div *ngIf=\"articles then Articles\"></div>\n      <ng-template #Articles>\n        \n          <div class=\"row\">\n            <article *ngFor=\"let article of articles.data;\">\n              \n            \n            <h1 class=\"col-xs-12\">\n              {{ article.attributes.title }}\n            </h1>\n            <div class=\"col-xs-12 col-md-8\" [innerHtml]=\"article.attributes.body.processed\">\n            </div>\n            </article>  \n            \n          </div>\n        \n      </ng-template>\n    </div>  \n    \n\n    <aside class=\"col-sm-3 col-xs-12 col-md-3 sidebar-home\">\n      <div class=\"container\">\n\n       <app-sidebar></app-sidebar>\n\n      </div>\n    </aside>\n  <div class=\"col-sm-1\">\n    \n  </div>\n  </div>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -1064,20 +1155,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/article.service */ "./src/app/service/article.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
+// import { BackendService } from '../service/backend.service';
+
+
+// import { ApiPipePipe } from '../api-pipe.pipe';
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(articleService, route, router) {
+        this.articleService = articleService;
+        this.route = route;
+        this.router = router;
+        this.mode = 'Observable';
+        this.param = '?filter[article-promote][path]=promote&filter[article-promote][value]=1&filter[article-promote][operator]==&filter[condition][path]=field_tags.name&filter[condition][value]=Front_page&include=field_image';
+        this.id = "4fe1ddbe-af94-4888-9cf2-3d032e0fd1c1";
     }
+    HomeComponent.prototype.getArticles = function (param) {
+        var _this = this;
+        this.articleService.getArticles(param).subscribe(function (articles) { return _this.articles = articles; });
+    };
+    HomeComponent.prototype.getArticle = function () {
+        var _this = this;
+        // this.articleService.getArticle(id).subscribe(article => this.article = article);
+        this.articleService.getArticleXimg(this.id).subscribe(function (article) { return _this.article = article; });
+    };
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            // if (params['id']) {
+            var id = _this.id;
+            _this.getArticles(_this.param);
+            // }
+            // else {
+            // this.getArticles(this.param);
+            // }
+        });
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
+            providers: [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"]],
             styles: [__webpack_require__(/*! ./home.component.scss */ "./src/app/home/home.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -1300,6 +1425,11 @@ var ArticleService = /** @class */ (function () {
         console.log(this.articlesUrl + '/' + id + '?include=field_image');
         if (id) {
             return this.http.get(this.articlesUrl + '/' + id + '?include=field_image', httpOptions);
+        }
+    };
+    ArticleService.prototype.getArticleXimg = function (id) {
+        if (id) {
+            return this.http.get(this.articlesUrl + '/' + id, httpOptions);
         }
     };
     // getArticle(id: string): Observable<Article>
