@@ -129,7 +129,7 @@ console.log("status " + status);
             this.donation = {
               name: '',
               results: `Success! Your donation of \$${this.donation.amount} was successful.`,
-              message: '',
+              message: `Success! Your donation of \$${this.donation.amount} was successful.`,
               email: '',
               address1: '',
               city: '',
@@ -144,8 +144,9 @@ console.log("status " + status);
               transaction_code: '',
               cardNumber: ''
             }
+            this.message = `Success! Your donation .of \$${this.donation.amount} was successful.`;
             donateForm.resetForm();
-           
+            this.message = `Success! Your donation of \$${this.donation.amount} was successful.`;
          
 
         } else {

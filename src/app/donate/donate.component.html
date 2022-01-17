@@ -12,10 +12,10 @@
       
       <p>Donations made here are secure and encrypted. No card numbers are stored on this site.</p>
       <p>You will receive an acknowledgement to the email address you provide.</p>
-     
+      <span class="valid-feedback">{{message}}</span>
       <form #f="ngForm" name="donationForm" (ngSubmit)="f.form.valid && getToken(f)" id="donateForm" novalidate >
 
-      <span class="valid-feedback">{{message}}</span>
+      
       <div [hidden]="f.submitted">
 
         <div class="form-group">
@@ -70,11 +70,12 @@
 
         <div class="form-group">
           <label for="amount">Donation amount</label>
-          <input #amount="ngModel" [(ngModel)]="donation.amount" name="amount" type="text" class="form-control form-control-sm" id="amount" required>
+          <input #amount="ngModel" [(ngModel)]="donation.amount" name="amount" placeholder="Whole dollar amount please" type="text" class="form-control form-control-sm" id="amount" required pattern="^(0|[1-9][0-9]*)$">
           <div *ngIf="amount.invalid && (amount.dirty || amount.touched)"
               class="alert alert-danger">
             
             <div *ngIf="amount.errors?.required">Please enter the amount of your donation.</div>
+            <div *ngIf="amount.errors?.pattern">Please enter a dollar amount of your donation. No need for $.</div>
           </div>
         </div>
 
