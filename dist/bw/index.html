@@ -7,10 +7,16 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=environment.gtkey"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
 
   <script src="https://js.stripe.com/v2/"></script>
   <script type="text/javascript">
-  Stripe.setPublishableKey('pk_test_tWiAp5GaM7pUWYJN5JdyTXE100U9FLDvjk');
+  Stripe.setPublishableKey(environment.skey);
 </script>
 </head>
 <body>

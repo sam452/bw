@@ -421,18 +421,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+
+
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(router) {
+        this.router = router;
         this.title = 'Bent Whisker Ranch';
+        this.router.events.subscribe(function (event) {
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+                gtag('config', _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].gtkey, {
+                    'page_path': event.urlAfterRedirects
+                });
+            }
+        });
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -445,11 +458,12 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: AppModule */
+/*! exports provided: appRoutes, AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appRoutes", function() { return appRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
@@ -478,6 +492,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
 /* harmony import */ var _amzsmile_amzsmile_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./amzsmile/amzsmile.component */ "./src/app/amzsmile/amzsmile.component.ts");
 /* harmony import */ var _chewy_chewy_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./chewy/chewy.component */ "./src/app/chewy/chewy.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_google_analytics_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./service/google-analytics.service */ "./src/app/service/google-analytics.service.ts");
 
 
 
@@ -506,6 +522,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+var appRoutes = [
+    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"] },
+    { path: 'successess', component: _successes_successes_component__WEBPACK_IMPORTED_MODULE_10__["SuccessesComponent"] },
+    { path: 'success', component: _successes_success_success_component__WEBPACK_IMPORTED_MODULE_11__["SuccessComponent"] },
+    { path: 'donate', component: _donate_donate_component__WEBPACK_IMPORTED_MODULE_14__["DonateComponent"] },
+    { path: 'privacy', component: _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_13__["PrivacyComponent"] }
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -535,12 +560,13 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_27__["RouterModule"].forRoot(appRoutes),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormsModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ReactiveFormsModule"]
             ],
-            providers: [_service_backend_service__WEBPACK_IMPORTED_MODULE_16__["BackendService"]],
+            providers: [_service_backend_service__WEBPACK_IMPORTED_MODULE_16__["BackendService"], _service_google_analytics_service__WEBPACK_IMPORTED_MODULE_28__["GoogleAnalyticsService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -824,7 +850,7 @@ var ContactComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but are many other costs associated with animal care. For gifts in kind contact us for information.</p>\n\n    </div>\n  </div>\n      \n  <div class=\"row\">\n\n    <div class=\"col-9\">\n      \n      <p>Donations made here are secure and encrypted. No card numbers are stored on this site.</p>\n      <p>You will receive an acknowledgement to the email address you provide.</p>\n      <span class=\"valid-feedback\">{{message}}</span>\n      <form #f=\"ngForm\" name=\"donationForm\" (ngSubmit)=\"f.form.valid && getToken(f)\" id=\"donateForm\" novalidate >\n\n      \n      <div [hidden]=\"f.submitted\">\n\n        <div class=\"form-group\">\n          <label for=\"name\">Name on credit card</label>\n            <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control form-control-sm\" [(ngModel)]=\"donation.name\" #name=\"ngModel\"  required> \n          \n            <div *ngIf=\"name.invalid && (name.dirty || name.touched)\"\n              class=\"alert alert-danger\">\n              <div *ngIf=\"name.errors?.required\">Name on credit card is required.</div>\n            </div>\n        </div>\n        \n        <div class=\"form-group\">\n          <label for=\"address1\">Address (where card statements sent)</label>\n            <input  #address1=\"ngModel\" name=\"address1\"  type=\"text\" class=\"form-control form-control-sm\" id=\"address1\" [(ngModel)]=\"donation.address1\" required>\n          <div *ngIf=\"address1.invalid && (address1.dirty || address1.touched)\"\n                class=\"alert alert-danger\">\n              \n            <div *ngIf=\"address1.errors?.required\">Address is required.</div>\n          </div>\n        </div>\n \n        <div class=\"row no-gutters\">\n          <div class=\"col-6\">\n            <label for=\"city\">City</label>\n            <input #city=\"ngModel\" [(ngModel)]=\"donation.city\" name=\"city\" type=\"text\" class=\"form-control form-control-sm\" id=\"city\">\n          </div>\n        \n          <div class=\"col-2\">\n            <label for=\"state\">state</label>\n            <input #state=\"ngModel\"  [(ngModel)]=\"donation.state\" name=\"state\" type=\"text\" class=\"form-control form-control-sm\" id=\"state\">\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"zip\">Zip code</label>\n            <input #zip=\"ngModel\" [(ngModel)]=\"donation.zip\" name=\"zip\" type=\"text\" class=\"form-control form-control-sm\" id=\"zip\" required>\n            <div *ngIf=\"zip.invalid && (zip.dirty || zip.touched)\"\n            class=\"alert alert-danger\">\n             <div *ngIf=\"zip.errors?.required\">Billing zip code is required.</div>\n           </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email</label>\n          <input #email=\"ngModel\" [(ngModel)]=\"donation.email\" name=\"email\" type=\"text\" class=\"form-control form-control-sm\" id=\"email\" required>\n          <div *ngIf=\"email.invalid && (email.dirty || email.touched)\"\n            class=\"alert alert-danger\">\n            <div *ngIf=\"email.errors?.required\">Name on credit card is required.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"amount\">Donation amount</label>\n          <input #amount=\"ngModel\" [(ngModel)]=\"donation.amount\" name=\"amount\" placeholder=\"Whole dollar amount please\" type=\"text\" class=\"form-control form-control-sm\" id=\"amount\" required pattern=\"^(0|[1-9][0-9]*)$\">\n          <div *ngIf=\"amount.invalid && (amount.dirty || amount.touched)\"\n              class=\"alert alert-danger\">\n            \n            <div *ngIf=\"amount.errors?.required\">Please enter the amount of your donation.</div>\n            <div *ngIf=\"amount.errors?.pattern\">Please enter a dollar amount of your donation. No need for $.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"reason\">Additional note</label>\n            <input #reason=\"ngModel\" [(ngModel)]=\"donation.reason\" name=\"reason\" type=\"text\" class=\"form-control form-control-sm\" id=\"reason\">\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"cardNumber\">Card Number</label>\n            <input #cardNumber=\"ngModel\" [(ngModel)]=\"donation.cardNumber\" name=\"cardNumber\" type=\"text\" class=\"form-control form-control-sm\" id=\"cardNumber\" data-stripe=\"number\" required>\n            <div *ngIf=\"cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)\"\n              class=\"alert alert-danger\">\n              <div *ngIf=\"cardNumber.errors?.required\">Credit card is required.</div>\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"row no-gutters\">\n            <label for=\"expiry\" class=\"col-5\">Expiration: (MM/YY)</label>\n            \n            <label for=\"cvc\" class=\"col-1\">CVC</label>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-2\">\n              \n                <input #expiryMonth=\"ngModel\" [(ngModel)]=\"donation.expiryMonth\" name=\"expiryMonth\" type=\"text\" class=\"form-control form-control-sm\" placeholder=\"MM\" id=\"expiryMonth\" data-stripe=\"exp_month\" required>\n                <div *ngIf=\"expiryMonth.invalid && (expiryMonth.dirty || expiryMonth.touched)\"\n              class=\"alert alert-danger\">\n                  <div *ngIf=\"expiryMonth.errors?.required\">Card expiration month is required.</div>\n                </div>\n            </div>     \n            <div style=\"width: 10px;\">\n                  <span> / </span>\n            </div>\n         \n            <div class=\"col-2\">\n              <input #expiryYear=\"ngModel\" [(ngModel)]=\"donation.expiryYear\" name=\"expiryYear\" type=\"text\"  data-stripe=\"exp_year\" placeholder=\"YY\" class=\"form-control form-control-sm\" required>\n              <div *ngIf=\"expiryYear.invalid && (expiryYear.dirty || expiryYear.touched)\"\n              class=\"alert alert-danger\">\n                <div *ngIf=\"expiryYear.errors?.required\">Card expiration year is required.</div>\n              </div>\n            </div>\n          \n        \n            <div class=\"col-2\">\n              \n              <input #cvc=\"ngModel\" [(ngModel)]=\"donation.cvc\" placeholder=\"CVC\" name=\"cvc\" type=\"text\"  id=\"cvc\" class=\"form-control form-control-sm\" data-stripe=\"cvc\" required minlength=\"3\">\n              <div *ngIf=\"cvc.invalid && (cvc.dirty || cvc.touched)\"\n              class=\"alert alert-danger\">\n                <div *ngIf=\"cvc.errors?.required\">Address verification code on credit card is required.</div>\n                <div *ngIf=\"cvc.errors?.minlength\">Address verification code on credit card has at least three characters</div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n      </div>\n      <div *ngIf=\"results\" class=\"message-success offset-bottom\">\n          <span class=\"results-message\">{{results}}</span>\n      </div>\n\n        <div class=\"form-group\">\n         <!--  <input type=\"submit\" value=\"Submit Donation\"> -->\n         <button type=\"submit\" [disabled]=\"f.invalid\">Submit donation</button>\n        </div>\n\n      \n      </form>\n    \n    </div>\n      <div class=\"col sidebar-home\">\n        \n          <app-amzwish></app-amzwish>\n          <app-amzsmile></app-amzsmile>\n          <app-chewy></app-chewy>\n        \n      </div>\n\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <p>Bent Whisker Ranch is a 501(c)3 organization whose mission is to treat and foster older cats and we need your help. We always need cat food and litter, but are many other costs associated with animal care. For gifts in kind contact us for information.</p>\n\n    </div>\n  </div>\n      \n  <div class=\"row\">\n\n    <div class=\"col-9\">\n      \n      <p>Donations made here are secure and encrypted. No card numbers are stored on this site.</p>\n      <p>You will receive an acknowledgement to the email address you provide.</p>\n      <span class=\"valid-feedback\">{{message}}</span>\n      <form #f=\"ngForm\" name=\"donationForm\" (ngSubmit)=\"f.form.valid && getToken(f)\" id=\"donateForm\" novalidate >\n\n      \n      <div [hidden]=\"f.submitted\">\n\n        <div class=\"form-group\">\n          <label for=\"name\">Name on credit card</label>\n            <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control form-control-sm\" [(ngModel)]=\"donation.name\" #name=\"ngModel\"  required> \n          \n            <div *ngIf=\"name.invalid && (name.dirty || name.touched)\"\n              class=\"alert alert-danger\">\n              <div *ngIf=\"name.errors?.required\">Name on credit card is required.</div>\n            </div>\n        </div>\n        \n        <div class=\"form-group\">\n          <label for=\"address1\">Address (where card statements sent)</label>\n            <input  #address1=\"ngModel\" name=\"address1\"  type=\"text\" class=\"form-control form-control-sm\" id=\"address1\" [(ngModel)]=\"donation.address1\" required>\n          <div *ngIf=\"address1.invalid && (address1.dirty || address1.touched)\"\n                class=\"alert alert-danger\">\n              \n            <div *ngIf=\"address1.errors?.required\">Address is required.</div>\n          </div>\n        </div>\n \n        <div class=\"row no-gutters\">\n          <div class=\"col-6\">\n            <label for=\"city\">City</label>\n            <input #city=\"ngModel\" [(ngModel)]=\"donation.city\" name=\"city\" type=\"text\" class=\"form-control form-control-sm\" id=\"city\">\n          </div>\n        \n          <div class=\"col-2\">\n            <label for=\"state\">state</label>\n            <input #state=\"ngModel\"  [(ngModel)]=\"donation.state\" name=\"state\" type=\"text\" class=\"form-control form-control-sm\" id=\"state\">\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"zip\">Zip code</label>\n            <input #zip=\"ngModel\" [(ngModel)]=\"donation.zip\" name=\"zip\" type=\"text\" class=\"form-control form-control-sm\" id=\"zip\" required>\n            <div *ngIf=\"zip.invalid && (zip.dirty || zip.touched)\"\n            class=\"alert alert-danger\">\n             <div *ngIf=\"zip.errors?.required\">Billing zip code is required.</div>\n           </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email</label>\n          <input #email=\"ngModel\" [(ngModel)]=\"donation.email\" name=\"email\" type=\"text\" class=\"form-control form-control-sm\" id=\"email\" required>\n          <div *ngIf=\"email.invalid && (email.dirty || email.touched)\"\n            class=\"alert alert-danger\">\n            <div *ngIf=\"email.errors?.required\">Name on credit card is required.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"amount\">Donation amount</label>\n          <input #amount=\"ngModel\" [(ngModel)]=\"donation.amount\" name=\"amount\" placeholder=\"Whole dollar amount please\" type=\"text\" class=\"form-control form-control-sm\" id=\"amount\" required pattern=\"^(0|[1-9][0-9]*)$\">\n          <div *ngIf=\"amount.invalid && (amount.dirty || amount.touched)\"\n              class=\"alert alert-danger\">\n            \n            <div *ngIf=\"amount.errors?.required\">Please enter the amount of your donation.</div>\n            <div *ngIf=\"amount.errors?.pattern\">Please enter a dollar amount of your donation. No need for $.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"reason\">Additional note</label>\n            <input #reason=\"ngModel\" [(ngModel)]=\"donation.reason\" name=\"reason\" type=\"text\" class=\"form-control form-control-sm\" id=\"reason\">\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"cardNumber\">Card Number</label>\n            <input #cardNumber=\"ngModel\" [(ngModel)]=\"donation.cardNumber\" name=\"cardNumber\" type=\"text\" class=\"form-control form-control-sm\" id=\"cardNumber\" data-stripe=\"number\" required>\n            <div *ngIf=\"cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)\"\n              class=\"alert alert-danger\">\n              <div *ngIf=\"cardNumber.errors?.required\">Credit card is required.</div>\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"row no-gutters\">\n            <label for=\"expiry\" class=\"col-5\">Expiration: (MM/YY)</label>\n            \n            <label for=\"cvc\" class=\"col-1\">CVC</label>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-2\">\n              \n                <input #expiryMonth=\"ngModel\" [(ngModel)]=\"donation.expiryMonth\" name=\"expiryMonth\" type=\"text\" class=\"form-control form-control-sm\" placeholder=\"MM\" id=\"expiryMonth\" data-stripe=\"exp_month\" required>\n                <div *ngIf=\"expiryMonth.invalid && (expiryMonth.dirty || expiryMonth.touched)\"\n              class=\"alert alert-danger\">\n                  <div *ngIf=\"expiryMonth.errors?.required\">Card expiration month is required.</div>\n                </div>\n            </div>     \n            <div style=\"width: 10px;\">\n                  <span> / </span>\n            </div>\n         \n            <div class=\"col-2\">\n              <input #expiryYear=\"ngModel\" [(ngModel)]=\"donation.expiryYear\" name=\"expiryYear\" type=\"text\"  data-stripe=\"exp_year\" placeholder=\"YY\" class=\"form-control form-control-sm\" required>\n              <div *ngIf=\"expiryYear.invalid && (expiryYear.dirty || expiryYear.touched)\"\n              class=\"alert alert-danger\">\n                <div *ngIf=\"expiryYear.errors?.required\">Card expiration year is required.</div>\n              </div>\n            </div>\n          \n        \n            <div class=\"col-2\">\n              \n              <input #cvc=\"ngModel\" [(ngModel)]=\"donation.cvc\" placeholder=\"CVC\" name=\"cvc\" type=\"text\"  id=\"cvc\" class=\"form-control form-control-sm\" data-stripe=\"cvc\" required minlength=\"3\">\n              <div *ngIf=\"cvc.invalid && (cvc.dirty || cvc.touched)\"\n              class=\"alert alert-danger\">\n                <div *ngIf=\"cvc.errors?.required\">Address verification code on credit card is required.</div>\n                <div *ngIf=\"cvc.errors?.minlength\">Address verification code on credit card has at least three characters</div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n      </div>\n      <div *ngIf=\"results\" class=\"message-success offset-bottom\">\n          <span class=\"results-message\">{{results}}</span>\n      </div>\n\n        <div class=\"form-group\">\n         <!--  <input type=\"submit\" value=\"Submit Donation\"> -->\n         \n         <button type=\"submit\" [disabled]=\"f.invalid\" (click)=\"SendDonateEvent()\">Submit donation</button>\n        </div>\n\n      \n      </form>\n    \n    </div>\n      <div class=\"col sidebar-home\">\n        \n          <app-amzwish></app-amzwish>\n          <app-amzsmile></app-amzsmile>\n          <app-chewy></app-chewy>\n        \n      </div>\n\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -853,15 +879,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _service_backend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/backend.service */ "./src/app/service/backend.service.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _service_google_analytics_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/google-analytics.service */ "./src/app/service/google-analytics.service.ts");
 
 
 
 
 // import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+
 var DonateComponent = /** @class */ (function () {
-    function DonateComponent(bs, _zone) {
+    function DonateComponent(bs, _zone, googleAnalyticsService) {
         this.bs = bs;
         this._zone = _zone;
+        this.googleAnalyticsService = googleAnalyticsService;
         // if(!window['Stripe']) {
         //   alert('Oops! Stripe did not initialize properly.');
         //   return;
@@ -984,6 +1013,10 @@ var DonateComponent = /** @class */ (function () {
             });
         });
     };
+    DonateComponent.prototype.SendDonateEvent = function () {
+        this.googleAnalyticsService
+            .eventEmitter("purchase", "donation", "form", "click", 10);
+    };
     DonateComponent.prototype.loadStripe = function () {
         if (!window.document.getElementById('stripe-custom-form-script')) {
             var s = window.document.createElement("script");
@@ -991,7 +1024,7 @@ var DonateComponent = /** @class */ (function () {
             s.type = "text/javascript";
             s.src = "https://js.stripe.com/v2/";
             s.onload = function () {
-                window['Stripe'].setPublishableKey('pk_test_tWiAp5GaM7pUWYJN5JdyTXE100U9FLDvjk');
+                window['Stripe'].setPublishableKey('environment.skey');
             };
             window.document.body.appendChild(s);
         }
@@ -1002,7 +1035,7 @@ var DonateComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./donate.component.html */ "./src/app/donate/donate.component.html"),
             styles: [__webpack_require__(/*! ./donate.component.scss */ "./src/app/donate/donate.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _service_google_analytics_service__WEBPACK_IMPORTED_MODULE_4__["GoogleAnalyticsService"]])
     ], DonateComponent);
     return DonateComponent;
 }());
@@ -1485,8 +1518,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Api = {
-    login: 'https://work.bentwhiskerranch.org/api/v1/auth/sign_in',
-    transactions: 'https://work.bentwhiskerranch.org/jsonapi/node/transaction'
+    login: 'https://works.bentwhiskerranch.org/api/v1/auth/sign_in',
+    transactions: 'https://works.bentwhiskerranch.org/jsonapi/node/transaction'
 };
 // export const Api = {
 //     login : 'http://localhost:3000/api/v1/auth/sign_in',
@@ -1526,6 +1559,46 @@ var BackendService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], BackendService);
     return BackendService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/google-analytics.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/service/google-analytics.service.ts ***!
+  \*****************************************************/
+/*! exports provided: GoogleAnalyticsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleAnalyticsService", function() { return GoogleAnalyticsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var GoogleAnalyticsService = /** @class */ (function () {
+    function GoogleAnalyticsService() {
+    }
+    GoogleAnalyticsService.prototype.eventEmitter = function (eventName, eventCategory, eventAction, eventLabel, eventValue) {
+        if (eventLabel === void 0) { eventLabel = null; }
+        if (eventValue === void 0) { eventValue = null; }
+        gtag('event', eventName, {
+            eventCategory: eventCategory,
+            eventLabel: eventLabel,
+            eventAction: eventAction,
+            eventValue: eventValue
+        });
+    };
+    GoogleAnalyticsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], GoogleAnalyticsService);
+    return GoogleAnalyticsService;
 }());
 
 
@@ -1777,6 +1850,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
+    skey: 'pk_test_tWiAp5GaM7pUWYJN5JdyTXE100U9FLDvjk',
+    gtkey: 'G-WEXEE2JH92'
 };
 /*
  * For easier debugging in development mode, you can import the following file
