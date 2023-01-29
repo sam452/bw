@@ -28,6 +28,16 @@ import { ApiPipePipe } from './api-pipe.pipe';
 import { AboutComponent } from './about/about.component';
 import { AmzsmileComponent } from './amzsmile/amzsmile.component';
 import { ChewyComponent } from './chewy/chewy.component';
+import { RouterModule, Routes} from '@angular/router';
+import {GoogleAnalyticsService} from './service/google-analytics.service';
+
+export const appRoutes: Routes = [
+  {path: '', component:HomeComponent},
+  {path:'successess', component:SuccessesComponent},
+  {path:'success', component:SuccessComponent},
+  {path:'donate', component:DonateComponent},
+  {path: 'privacy', component:PrivacyComponent}
+]
 
 
 @NgModule({
@@ -55,12 +65,13 @@ import { ChewyComponent } from './chewy/chewy.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [BackendService],
+  providers: [BackendService, GoogleAnalyticsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

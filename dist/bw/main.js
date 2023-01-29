@@ -1485,8 +1485,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Api = {
-    login: 'https://works.bentwhiskerranch.org/api/v1/auth/sign_in',
-    transactions: 'https://works.bentwhiskerranch.org/jsonapi/node/transaction'
+    login: 'https://work.bentwhiskerranch.org/api/v1/auth/sign_in',
+    transactions: 'https://work.bentwhiskerranch.org/jsonapi/node/transaction'
 };
 // export const Api = {
 //     login : 'http://localhost:3000/api/v1/auth/sign_in',

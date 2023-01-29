@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  skey: 'pk_test_tWiAp5GaM7pUWYJN5JdyTXE100U9FLDvjk',
+  gtkey: 'G-WEXEE2JH92'
 };
 
 /*

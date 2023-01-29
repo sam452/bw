@@ -140,7 +140,8 @@
 
         <div class="form-group">
          <!--  <input type="submit" value="Submit Donation"> -->
-         <button type="submit" [disabled]="f.invalid">Submit donation</button>
+         
+         <button type="submit" [disabled]="f.invalid" (click)="SendDonateEvent()">Submit donation</button>
         </div>
 
       

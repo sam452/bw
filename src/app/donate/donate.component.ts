@@ -3,7 +3,8 @@ import { BackendService } from '../service/backend.service';
 import { formatDate } from '@angular/common';
 import { NgForm } from '@angular/forms'
 // import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
-
+import{GoogleAnalyticsService} from '../service/google-analytics.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   moduleId: module.id,
@@ -65,7 +66,7 @@ export class DonateComponent {
 
   myDate = new Date();
   
-  constructor(private bs: BackendService, private _zone: NgZone) {
+  constructor(private bs: BackendService, private _zone: NgZone, public googleAnalyticsService: GoogleAnalyticsService) {
     
   }
 
@@ -160,6 +161,10 @@ console.log("status " + status);
   
   }
 
+  SendDonateEvent(){ 
+     this.googleAnalyticsService
+     .eventEmitter("purchase", "donation", "form", "click", 10);
+  } 
 
   loadStripe() {
    
@@ -169,7 +174,7 @@ console.log("status " + status);
       s.type = "text/javascript";
       s.src = "https://js.stripe.com/v2/";
       s.onload = () => {
-        window['Stripe'].setPublishableKey('pk_test_tWiAp5GaM7pUWYJN5JdyTXE100U9FLDvjk');
+        window['Stripe'].setPublishableKey('environment.skey');
       }
        
       window.document.body.appendChild(s);
