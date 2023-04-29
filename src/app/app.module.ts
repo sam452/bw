@@ -30,6 +30,7 @@ import { AmzsmileComponent } from './amzsmile/amzsmile.component';
 import { ChewyComponent } from './chewy/chewy.component';
 import { RouterModule, Routes} from '@angular/router';
 import {GoogleAnalyticsService} from './service/google-analytics.service';
+import { WalmartComponent } from './walmart/walmart.component';
 
 export const appRoutes: Routes = [
   {path: '', component:HomeComponent},
@@ -61,7 +62,8 @@ export const appRoutes: Routes = [
     ApiPipePipe,
     AboutComponent,
     AmzsmileComponent,
-    ChewyComponent
+    ChewyComponent,
+    WalmartComponent
   ],
   imports: [
     BrowserModule,
